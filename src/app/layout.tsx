@@ -4,10 +4,10 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
-  description: 'Personal portfolio of Muhammad Subhan, a 19-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
+  description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
   openGraph: {
     title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
-    description: 'Personal portfolio of Muhammad Subhan, a 19-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
+    description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
     url: 'https://subhan-ai.com', // Replace with actual URL
     siteName: 'Subhan.AI',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
-    description: 'Personal portfolio of Muhammad Subhan, a 19-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
+    description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
     images: ['https://placehold.co/1200x630.png'], // Replace with an actual OG image
   },
 };
