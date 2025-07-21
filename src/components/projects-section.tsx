@@ -1,0 +1,111 @@
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github, Link as LinkIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+
+const projects = [
+  {
+    title: "StudySync AI",
+    description: "An AI-powered assistant for students, providing personalized quizzes, flashcards from notes, and document summaries to enhance learning.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "education technology",
+    tags: ["Next.js", "AI", "Firebase", "EdTech"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Bio-AI Simulation Platform",
+    description: "A platform for real-time 3D simulation and visualization of gene circuits, leveraging AI to predict biological interactions.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "biotechnology abstract",
+    tags: ["Next.js", "3D", "AI", "Biology"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "3D Gravity Simulator",
+    description: "A hackathon project building an interactive 3D gravity and orbital mechanics simulator using JavaScript.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "galaxy space",
+    tags: ["JavaScript", "Physics", "3D"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+];
+
+export function ProjectsSection() {
+    const cardVariants = {
+    offscreen: {
+      y: 50,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
+      }
+    }
+  };
+
+  return (
+    <section id="projects" className="py-20 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">Featured Projects</h2>
+          <p className="mt-2 text-lg text-foreground/80">Some of the things I've built.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={cardVariants}
+            >
+              <Card className="h-full flex flex-col bg-card/50 border-border overflow-hidden group">
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={project.imageHint}
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-headline">{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col">
+                  <p className="text-foreground/80 mb-4 flex-grow">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex items-center space-x-4 mt-auto pt-4 border-t border-border">
+                  <Button variant="outline" asChild>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <LinkIcon className="mr-2 h-4 w-4" /> Live Demo
+                    </a>
+                  </Button>
+                  <Button variant="ghost" asChild>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" /> GitHub
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
