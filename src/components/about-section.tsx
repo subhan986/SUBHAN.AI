@@ -1,9 +1,6 @@
-import { SummaryToneChanger } from './summary-tone-changer';
 import Image from 'next/image';
 
 export function AboutSection() {
-  const personalSummary = `As a 19-year-old developer and AI builder, I stand at the intersection of creativity, code, and cognitive science. My passion lies in pushing the boundaries of what's possible with Large Language Models (LLMs) and crafting futuristic, intelligent user interfaces. I'm particularly drawn to building tools that empower students and democratize education, like my project StudySync AI. From exploring synthetic gene circuits to visualizing complex data in 3D, I am driven by a relentless curiosity to learn in public and build a future where technology and design are seamlessly integrated for the benefit of all.`;
-
   return (
     <section id="about" className="py-20 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,6 +14,9 @@ export function AboutSection() {
               <p>
                 My work revolves around building meaningful digital experiences, with a special focus on Large Language Models, futuristic UIs, and innovative tools for students. I thrive on exploring new frontiers, from Bio-AI projects to rapid MVP development at hackathons.
               </p>
+               <p>
+                As a 19-year-old developer and AI builder, I stand at the intersection of creativity, code, and cognitive science. My passion lies in pushing the boundaries of what's possible with Large Language Models (LLMs) and crafting futuristic, intelligent user interfaces. I'm particularly drawn to building tools that empower students and democratize education, like my project StudySync AI. From exploring synthetic gene circuits to visualizing complex data in 3D, I am driven by a relentless curiosity to learn in public and build a future where technology and design are seamlessly integrated for the benefit of all.
+              </p>
             </div>
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
               <Image
@@ -28,7 +28,6 @@ export function AboutSection() {
                 data-ai-hint="portrait professional"
               />
             </div>
-            <SummaryToneChanger initialSummary={personalSummary} />
           </div>
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
