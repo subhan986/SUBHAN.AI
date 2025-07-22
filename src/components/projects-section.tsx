@@ -12,7 +12,7 @@ const projects = [
   {
     title: "StudySync AI",
     description: "An AI-powered assistant for students, providing personalized quizzes, flashcards from notes, and document summaries to enhance learning.",
-    image: "https://placehold.co/600x400.png",
+    image: "/studysync.png",
     imageHint: "education technology",
     tags: ["Next.js", "AI", "Firebase", "EdTech"],
     liveUrl: "#",
