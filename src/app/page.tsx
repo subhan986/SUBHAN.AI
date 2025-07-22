@@ -25,15 +25,17 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <div className="space-y-20 md:space-y-32">
-          <AboutSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <ValuesSection />
-          <ContactSection />
+        <div className="main-background">
+          <div className="space-y-20 md:space-y-32">
+            <AboutSection />
+            <SkillsSection />
+            <ProjectsSection />
+            <ValuesSection />
+            <ContactSection />
+          </div>
+          <Footer />
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
