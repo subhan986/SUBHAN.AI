@@ -48,13 +48,17 @@ const CustomCursor = () => {
   return (
     <motion.div
       className={cn(
-        "fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999]",
+        "fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9999]",
         "bg-white/10 backdrop-blur-sm border border-white/20",
-        "pulsing-glow"
+        "pulsing-glow",
+        isHovering && "shiny-cursor"
       )}
       style={{
-        translateX: position.x - 16,
-        translateY: position.y - 16,
+        translateX: position.x - 12,
+        translateY: position.y - 12,
+        // @ts-ignore
+        '--x': `${position.x}px`,
+        '--y': `${position.y}px`,
       }}
       animate={{
         scale: isClicking ? 0.8 : (isHovering ? 1.5 : 1),

@@ -23,10 +23,10 @@ a:hover, button:hover {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 10px 0px hsl(var(--primary) / 0.2);
+    box-shadow: 0 0 5px 0px hsl(var(--primary) / 0.2);
   }
   50% {
-    box-shadow: 0 0 20px 5px hsl(var(--primary) / 0.2);
+    box-shadow: 0 0 10px 2px hsl(var(--primary) / 0.2);
   }
 }
 
@@ -167,6 +167,22 @@ a:hover, button:hover {
 
   .shiny-effect:hover::before {
     opacity: 1;
+  }
+
+  .shiny-cursor::before {
+    content: "";
+    position: fixed;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(
+      hsl(var(--primary) / 0.25),
+      transparent 80%
+    );
+    opacity: 1;
+    pointer-events: none;
   }
 }
 
