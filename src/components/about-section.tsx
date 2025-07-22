@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import { LiquidChromeBackground } from './liquid-chrome-background';
 
 export function AboutSection() {
   return (
@@ -17,6 +18,7 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full h-80">
+                <LiquidChromeBackground />
                 <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover rounded-lg -z-10">
                   <source src="/about-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -31,6 +33,7 @@ export function AboutSection() {
           </div>
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                 <LiquidChromeBackground />
                  <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover -z-10">
                     <source src="/about-video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
