@@ -18,7 +18,7 @@ export function AboutSection() {
             </div>
              <div className="relative md:hidden w-full h-80">
                 <Image
-                    src="/unnamed.png"
+                    src="/unnamed.jpg"
                     alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-contain"
@@ -28,7 +28,7 @@ export function AboutSection() {
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px]">
                  <Image
-                    src="/unnamed.png"
+                    src="/unnamed.jpg"
                     alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-contain"
