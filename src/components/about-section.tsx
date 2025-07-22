@@ -16,22 +16,22 @@ export function AboutSection() {
                 From crafting intelligent systems with Large Language Models to designing futuristic UIs, I'm driven by a desire to explore uncharted territories. Whether it's a deep dive into Bio-AI or rapidly prototyping an idea at a hackathon, I'm constantly seeking new challenges that push the boundaries of what's possible. My goal is simple: to build tools that are not only powerful but also intuitive and empowering for everyone, especially students.
               </p>
             </div>
-             <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
+             <div className="relative md:hidden w-full h-80">
                 <Image
                     src="/about.png"
                     alt="A portrait of Muhammad Subhan"
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-contain"
                 />
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
-            <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
+            <div className="relative w-full h-[500px]">
                  <Image
                     src="/about.png"
                     alt="A portrait of Muhammad Subhan"
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-contain"
                   />
             </div>
           </div>
