@@ -16,24 +16,26 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
-              <Image
-                src="https://placehold.co/400x600.png"
-                alt="Muhammad Subhan"
-                fill
-                className="object-cover scale-105"
-                data-ai-hint="portrait professional"
-              />
+                <video
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                />
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
-              <Image
-                src="https://placehold.co/400x600.png"
-                alt="Muhammad Subhan"
-                fill
-                className="object-cover scale-105"
-                data-ai-hint="portrait professional"
-              />
+               <video
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
             </div>
           </div>
         </div>
