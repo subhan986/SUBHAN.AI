@@ -1,7 +1,7 @@
 "use client";
 
 import MetallicPaint, { parseLogoImage } from "./MetallicPaint";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ImageData } from 'react';
 
 const Loader = () => {
   const [imageData, setImageData] = useState<ImageData | null>(null);
@@ -10,12 +10,26 @@ const Loader = () => {
   useEffect(() => {
     async function loadLogo() {
       try {
-        const response = await fetch('/ms-logo.svg');
-        const blob = await response.blob();
+        // Embed SVG content directly as a string
+        const svgString = `
+          <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              .minecraft-font { font-family: 'Press Start 2P', cursive; }
+            </style>
+            <circle cx="250" cy="250" r="200" fill="black"/>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="minecraft-font">
+              <tspan x="50%" dy="-0.1em" font-size="120" fill="white" fill-opacity="0.75">M</tspan>
+              <tspan x="50%" dy="0.9em" font-size="120" fill="white">S</tspan>
+            </text>
+          </svg>
+        `;
+        const blob = new Blob([svgString], { type: 'image/svg+xml' });
         const file = new File([blob], "ms-logo.svg", { type: "image/svg+xml" });
 
         const parsedData = await parseLogoImage(file);
-        setImageData(parsedData?.imageData ?? null);
+        if (parsedData) {
+          setImageData(parsedData.imageData);
+        }
       } catch (err) {
         console.error("Error loading default image:", err);
       }
