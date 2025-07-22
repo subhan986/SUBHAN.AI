@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, useSpring } from "framer-motion";
-import GlassSurface from "./glass-surface";
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
@@ -17,26 +16,26 @@ export function CustomCursor() {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const onMouseEnter = (e: MouseEvent) => {
+    const onMouseOver = (e: MouseEvent) => {
         if (e.target instanceof HTMLAnchorElement || e.target instanceof HTMLButtonElement) {
              setIsHovering(true);
         }
     }
     
-    const onMouseLeave = (e: MouseEvent) => {
+    const onMouseOut = (e: MouseEvent) => {
         if (e.target instanceof HTMLAnchorElement || e.target instanceof HTMLButtonElement) {
              setIsHovering(false);
         }
     }
 
     window.addEventListener("mousemove", onMouseMove);
-    document.body.addEventListener('mouseover', onMouseEnter);
-    document.body.addEventListener('mouseout', onMouseLeave);
+    document.body.addEventListener('mouseover', onMouseOver);
+    document.body.addEventListener('mouseout', onMouseOut);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      document.body.removeEventListener('mouseover', onMouseEnter);
-      document.body.removeEventListener('mouseout', onMouseLeave);
+      document.body.removeEventListener('mouseover', onMouseOver);
+      document.body.removeEventListener('mouseout', onMouseOut);
     };
   }, []);
 
@@ -55,31 +54,23 @@ export function CustomCursor() {
   return (
     <motion.div
       style={{
-        position: "fixed",
         left: smoothPosition.x,
         top: smoothPosition.y,
-        translateX: "-50%",
-        translateY: "-50%",
-        pointerEvents: "none",
-        zIndex: 9999,
-        transition: 'width 0.2s ease-in-out, height 0.2s ease-in-out',
       }}
       animate={{ width: cursorSize, height: cursorSize }}
+      className="fixed rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
     >
-      <GlassSurface
-        width="100%"
-        height="100%"
-        borderRadius={cursorSize / 2}
-        blur={5}
-        displace={10}
-        opacity={0.1}
-        borderWidth={0.1}
-        brightness={10}
-        distortionScale={-80}
-        mixBlendMode="screen"
-      >
-        <div />
-      </GlassSurface>
+      <motion.div 
+        className="w-full h-full rounded-full border-2 transition-colors duration-300"
+        animate={{
+          borderColor: isHovering ? "hsl(var(--primary) / 0.5)" : "hsl(var(--foreground) / 0.2)",
+          backgroundColor: isHovering ? "hsl(var(--primary) / 0.1)" : "hsl(var(--foreground) / 0.1)",
+        }}
+        style={{
+          backdropFilter: 'blur(5px)',
+          WebkitBackdropFilter: 'blur(5px)',
+        }}
+       />
     </motion.div>
   );
 }
