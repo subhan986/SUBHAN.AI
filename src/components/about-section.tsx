@@ -2,26 +2,9 @@
 "use client";
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { generateImage } from '@/ai/flows/generate-image-flow';
 
 export function AboutSection() {
-  const [profileImageUrl, setProfileImageUrl] = useState("https://placehold.co/400x400.png");
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const result = await generateImage({ prompt: "A minimalist, anime-style portrait of Star Platinum from JoJo's Bizarre Adventure, with a dark, cosmic background." });
-        if (result.imageUrl) {
-          setProfileImageUrl(result.imageUrl);
-        }
-      } catch (error) {
-        console.error("Failed to generate image:", error);
-      }
-    };
-
-    fetchImage();
-  }, []);
+  const profileImageUrl = "https://placehold.co/400x400.png";
 
   return (
     <section id="about" className="py-10 lg:py-16">
@@ -43,7 +26,7 @@ export function AboutSection() {
                     alt="Star Platinum"
                     fill
                     className="object-cover rounded-lg"
-                    data-ai-hint="Star Platinum"
+                    data-ai-hint="Star Platinum anime"
                 />
             </div>
           </div>
@@ -54,7 +37,7 @@ export function AboutSection() {
                   alt="Star Platinum"
                   fill
                   className="object-cover rounded-lg"
-                  data-ai-hint="Star Platinum"
+                  data-ai-hint="Star Platinum anime"
                 />
             </div>
           </div>
