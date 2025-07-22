@@ -2,66 +2,52 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Link as LinkIcon } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShinyCard } from "./shiny-card";
 
 const projects = [
   {
     title: "StudySync AI",
-    description: "An AI-powered assistant for students, providing personalized quizzes, flashcards from notes, and document summaries to enhance learning.",
+    description: "An AI-powered learning companion designed to help students supercharge their studies. It can generate personalized quizzes, create flashcards from uploaded notes, and provide concise summaries of complex documents, transforming dense material into manageable insights.",
     image: "/studysync.png",
     imageHint: "education technology",
     tags: ["Next.js", "AI", "Firebase", "EdTech"],
-    liveUrl: "#",
-    githubUrl: "#",
   },
   {
     title: "Bio-AI Simulation Platform",
-    description: "A platform for real-time 3D simulation and visualization of gene circuits, leveraging AI to predict biological interactions.",
-    image: "/Bioai.png",
+    description: "A cutting-edge platform for visualizing and simulating synthetic gene circuits in real-time 3D. This tool leverages AI to predict and display complex biological interactions, offering researchers an intuitive way to explore genetic engineering concepts.",
+    image: "/bioai.png",
     imageHint: "biotechnology abstract",
     tags: ["Next.js", "3D", "AI", "Biology"],
-    liveUrl: "#",
-    githubUrl: "#",
   },
   {
     title: "3D Gravity Simulator",
-    description: "A hackathon project building an interactive 3D gravity and orbital mechanics simulator using JavaScript.",
+    description: "Developed during a weekend hackathon, this interactive 3D simulator models gravitational forces and orbital mechanics. Users can create celestial bodies and watch as their gravitational interactions form stable (or chaotic) solar systems.",
     image: "/Gravitysimulator.png",
     imageHint: "galaxy space",
     tags: ["JavaScript", "Physics", "3D"],
-    liveUrl: "#",
-    githubUrl: "#",
   },
   {
     title: "AI-Powered Code Assistant",
-    description: "A smart assistant integrated into the IDE that suggests code, finds bugs, and explains complex algorithms to streamline development.",
+    description: "A smart assistant integrated directly into the VS Code IDE. It goes beyond simple autocompletion by suggesting optimized code blocks, identifying potential bugs, and explaining complex algorithms, acting as a true pair programmer.",
     image: "/ai code assistant.png",
     imageHint: "purple code",
     tags: ["AI", "VS Code", "TypeScript", "Machine Learning"],
-    liveUrl: "#",
-    githubUrl: "#",
   },
   {
     title: "Decentralized Social Media App",
-    description: "A concept for a social media platform built on blockchain technology, ensuring user privacy and data ownership.",
+    description: "A conceptual prototype for a next-generation social media platform built on Web3 principles. It utilizes blockchain technology and IPFS to ensure user data ownership, privacy, and censorship resistance, rethinking how we connect online.",
     image: "/social media.png",
     imageHint: "purple network",
     tags: ["Web3", "Solidity", "React", "IPFS"],
-    liveUrl: "#",
-    githubUrl: "#",
   },
   {
     title: "Interactive Data Visualization Dashboard",
-    description: "A powerful dashboard that allows users to upload datasets and generate beautiful, interactive charts and graphs to discover insights.",
+    description: "A powerful SaaS tool that allows users to upload raw datasets and instantly generate a variety of beautiful, interactive charts and graphs. The dashboard makes it easy to explore data, uncover hidden trends, and share insights with others.",
     image: "/dataapp.png",
     imageHint: "purple dashboard",
     tags: ["D3.js", "React", "DataViz", "SaaS"],
-    liveUrl: "#",
-    githubUrl: "#",
   },
 ];
 
@@ -115,23 +101,11 @@ export function ProjectsSection() {
                     <CardTitle className="font-sans">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col">
-                    <p className="text-foreground/80 mb-4 flex-grow font-body">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <p className="text-foreground/80 mb-4 font-body">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border">
                       {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                     </div>
                   </CardContent>
-                  <CardFooter className="flex items-center space-x-4 mt-auto pt-4 border-t border-border font-body">
-                    <Button variant="outline" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <LinkIcon className="mr-2 h-4 w-4" /> Live Demo
-                      </a>
-                    </Button>
-                    <Button variant="ghost" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" /> GitHub
-                      </a>
-                    </Button>
-                  </CardFooter>
                 </Card>
               </ShinyCard>
             </motion.div>
