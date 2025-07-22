@@ -13,7 +13,6 @@ import { Footer } from "@/components/footer";
 import { useEffect, useState } from "react";
 import { GridBackground } from "@/components/grid-background";
 import { TechStackSection } from "@/components/tech-stack-section";
-import { CustomCursor } from "@/components/custom-cursor";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,7 +26,6 @@ export default function Home() {
 
   return (
     <div className={`flex flex-col min-h-screen transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-      <CustomCursor />
       <Header />
       <main className="flex-1">
         <HeroSection />

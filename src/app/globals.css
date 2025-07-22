@@ -4,12 +4,10 @@
 
 html {
   /* scroll-behavior: smooth; */ /* This is handled by JS in header.tsx */
-  cursor: none;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  cursor: none;
 }
 
 @layer base {
