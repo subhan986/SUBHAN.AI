@@ -74,9 +74,9 @@ export function SkillsSection() {
               <ShinyCard className="h-full">
                 <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 relative overflow-hidden">
                   <div className="animated-gradient absolute inset-0 -z-10"></div>
-                  <CardHeader className="flex flex-col items-center text-center">
+                  <CardHeader className="flex flex-col items-center text-center space-y-4">
                     {skill.icon}
-                    <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
+                    <CardTitle className="font-headline">{skill.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center text-foreground/80 font-body">
                     <p>{skill.description}</p>
