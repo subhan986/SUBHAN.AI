@@ -1,14 +1,14 @@
 
 "use client";
 import { motion } from "framer-motion";
-import { Gamepad2, BookOpen, Headphones, Keyboard, PencilRuler } from "lucide-react";
+import { Tv, BookOpen, Headphones, Keyboard, PencilRuler } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ShinyCard } from "./shiny-card";
 
 const favorites = [
   {
-    icon: <Gamepad2 className="w-10 h-10 text-primary pulsing-icon" />,
-    title: "Gaming",
+    icon: <Tv className="w-10 h-10 text-primary pulsing-icon" />,
+    title: "Anime",
     description: "Jojo's Bizarre Adventure & Death Note are my top picks.",
   },
   {
