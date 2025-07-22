@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 90 90">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+  </defs>
+  <style>
+    .text {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  </style>
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#A855F7">
+    <tspan opacity="0.75">M</tspan><tspan>S</tspan>
+  </text>
+</svg>
