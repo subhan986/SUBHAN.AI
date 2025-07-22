@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
@@ -73,7 +74,10 @@ export function TechStackSection() {
 
 const MarqueeRow = ({ items, reverse = false }: { items: string[], reverse?: boolean }) => {
   return (
-    <div className="flex min-w-full shrink-0 items-center justify-around gap-4">
+    <div className={cn(
+        "flex min-w-full shrink-0 items-center justify-around gap-4",
+        reverse ? "animate-marquee-reverse" : "animate-marquee"
+    )}>
       {items.map((text, i) => (
         <div
           key={text}
