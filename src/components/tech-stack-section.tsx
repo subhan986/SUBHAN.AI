@@ -41,16 +41,8 @@ export function TechStackSection() {
 
 
   return (
-    <section id="tech-stack" ref={targetRef} className="py-10 lg:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary mb-2">
-          My Tech Stack
-        </h2>
-        <p className="text-lg text-foreground/80 font-headline mb-12">
-          Technologies I use to bring ideas to life.
-        </p>
-      </div>
-      <div className="relative flex flex-col gap-4 overflow-hidden">
+    <section id="tech-stack" ref={targetRef} className="py-10 lg:py-16 relative overflow-hidden">
+      <div className="flex flex-col gap-4">
         <motion.div style={{ x: x1 }} className="flex gap-4">
           <MarqueeRow items={techStackTop} />
           <MarqueeRow items={techStackTop} />
