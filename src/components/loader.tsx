@@ -16,7 +16,7 @@ const Loader = () => {
             <style>
               .minecraft-font { font-family: 'Press Start 2P', cursive; }
             </style>
-            <circle cx="250" cy="250" r="200" fill="black"/>
+            <rect width="500" height="500" fill="black"/>
             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="minecraft-font">
               <tspan x="50%" dy="-0.1em" font-size="120" fill="white" fill-opacity="0.75">M</tspan>
               <tspan x="50%" dy="0.9em" font-size="120" fill="white">S</tspan>
