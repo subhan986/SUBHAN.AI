@@ -56,7 +56,7 @@ export function ValuesSection() {
           {values.map((value, index) => (
             <motion.li key={index} variants={itemVariants}>
               <ShinyCard>
-                <div className="flex flex-col items-center space-y-4 p-6 bg-card/50 rounded-lg border border-transparent hover:border-primary transition-colors">
+                <div className="flex flex-col items-center space-y-4 p-6 bg-card/50 rounded-lg border border-transparent hover:border-primary transition-colors duration-300">
                   {value.icon}
                   <h3 className="text-xl font-bold font-headline">{value.title}</h3>
                   <p className="text-foreground/80 font-headline">{value.description}</p>

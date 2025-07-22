@@ -66,7 +66,7 @@ export function FavoritesSection() {
               variants={cardVariants}
             >
               <ShinyCard className="h-full">
-                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-2">
+                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                   <CardHeader className="flex flex-col items-center text-center">
                     {fav.icon}
                     <CardTitle className="mt-4 font-headline text-lg">{fav.title}</CardTitle>

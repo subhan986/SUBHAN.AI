@@ -99,7 +99,7 @@ export function ProjectsSection() {
               className="h-full"
             >
               <ShinyCard className="h-full">
-                <Card className="h-full flex flex-col bg-card/50 border-border overflow-hidden group">
+                <Card className="h-full flex flex-col bg-card/50 border-border overflow-hidden group transition-all duration-300">
                   <div className="relative overflow-hidden">
                     <Image
                       src={project.image}
