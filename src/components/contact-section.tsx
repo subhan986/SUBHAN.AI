@@ -72,13 +72,13 @@ export function ContactSection() {
                 </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                <a href="https://www.linkedin.com/in/muhammad-subhan-younas/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/cosmicdrug/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />
                     LinkedIn
                 </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                <a href="https://github.com/subhan-younas" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/subhan986" target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-5 w-5" />
                     GitHub
                 </a>
