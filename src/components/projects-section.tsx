@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Bio-AI Simulation Platform",
     description: "A platform for real-time 3D simulation and visualization of gene circuits, leveraging AI to predict biological interactions.",
-    image: "https://placehold.co/600x400.png",
+    image: "/bioai.png",
     imageHint: "biotechnology abstract",
     tags: ["Next.js", "3D", "AI", "Biology"],
     liveUrl: "#",
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "3D Gravity Simulator",
     description: "A hackathon project building an interactive 3D gravity and orbital mechanics simulator using JavaScript.",
-    image: "https://placehold.co/600x400.png",
+    image: "/Gravitysimulator.png",
     imageHint: "galaxy space",
     tags: ["JavaScript", "Physics", "3D"],
     liveUrl: "#",
