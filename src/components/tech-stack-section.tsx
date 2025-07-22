@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -45,8 +45,11 @@ export function TechStackSection() {
     offset: ["start end", "end start"],
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], ["5%", "-25%"]);
-  const x2 = useTransform(scrollYProgress, [0, 1], ["-5%", "25%"]);
+  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
+  const scrollYProgressSmoothed = useSpring(scrollYProgress, springConfig);
+
+  const x1 = useTransform(scrollYProgressSmoothed, [0, 1], ["5%", "-25%"]);
+  const x2 = useTransform(scrollYProgressSmoothed, [0, 1], ["-5%", "25%"]);
 
 
   return (
