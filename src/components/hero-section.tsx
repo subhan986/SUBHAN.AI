@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { LiquidChromeBackground } from "./liquid-chrome-background";
 
 export function HeroSection() {
   return (
     <section id="home" className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden pt-16">
-      <div className="absolute inset-0 animated-gradient z-0"></div>
+      <LiquidChromeBackground />
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
