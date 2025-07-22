@@ -22,9 +22,8 @@ export function AboutSection() {
               <Image
                 src="https://placehold.co/400x600.png"
                 alt="Muhammad Subhan"
-                layout="fill"
-                objectFit="cover"
-                className="scale-105"
+                fill
+                className="object-cover scale-105"
                 data-ai-hint="portrait professional"
               />
             </div>
@@ -34,9 +33,8 @@ export function AboutSection() {
               <Image
                 src="https://placehold.co/400x600.png"
                 alt="Muhammad Subhan"
-                layout="fill"
-                objectFit="cover"
-                className="scale-105"
+                fill
+                className="object-cover scale-105"
                 data-ai-hint="portrait professional"
               />
             </div>
