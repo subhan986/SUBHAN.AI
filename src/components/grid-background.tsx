@@ -5,7 +5,7 @@ import React from "react";
 export function GridBackground({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="relative w-full bg-background"
+      className="relative w-full bg-background breathing-background"
     >
        <div
         className="absolute inset-0 z-0"
