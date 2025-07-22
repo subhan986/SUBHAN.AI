@@ -11,7 +11,7 @@ export function AboutSection() {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const result = await generateImage({ prompt: "A minimalist, anime-style portrait of Jotaro Kujo from JoJo's Bizarre Adventure, with a dark, moody background." });
+        const result = await generateImage({ prompt: "A minimalist, anime-style portrait of Star Platinum from JoJo's Bizarre Adventure, with a dark, cosmic background." });
         if (result.imageUrl) {
           setProfileImageUrl(result.imageUrl);
         }
@@ -40,10 +40,10 @@ export function AboutSection() {
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                 <Image
                     src={profileImageUrl}
-                    alt="Jotaro Kujo"
+                    alt="Star Platinum"
                     fill
                     className="object-cover rounded-lg"
-                    data-ai-hint="Jotaro Kujo"
+                    data-ai-hint="Star Platinum"
                 />
             </div>
           </div>
@@ -51,10 +51,10 @@ export function AboutSection() {
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                <Image
                   src={profileImageUrl}
-                  alt="Jotaro Kujo"
+                  alt="Star Platinum"
                   fill
                   className="object-cover rounded-lg"
-                  data-ai-hint="Jotaro Kujo"
+                  data-ai-hint="Star Platinum"
                 />
             </div>
           </div>
