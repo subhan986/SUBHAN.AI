@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 import { useRef } from "react";
+import { cn } from "@/lib/utils";
 
 const techStackTop = [
   "HTML",
@@ -29,6 +29,15 @@ const techStackBottom = [
   "Vercel",
 ];
 
+const colors = [
+  "bg-sky-500/20 text-sky-300 border-sky-500/30",
+  "bg-green-500/20 text-green-300 border-green-500/30",
+  "bg-red-500/20 text-red-300 border-red-500/30",
+  "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
+  "bg-purple-500/20 text-purple-300 border-purple-500/30",
+  "bg-pink-500/20 text-pink-300 border-pink-500/30",
+];
+
 export function TechStackSection() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -49,9 +58,9 @@ export function TechStackSection() {
           <MarqueeRow items={techStackTop} />
         </motion.div>
          <motion.div style={{ x: x2 }} className="flex gap-4">
-          <MarqueeRow items={techStackBottom} />
-          <MarqueeRow items={techStackBottom} />
-          <MarqueeRow items={techStackBottom} />
+          <MarqueeRow items={techStackBottom} reverse />
+          <MarqueeRow items={techStackBottom} reverse />
+          <MarqueeRow items={techStackBottom} reverse />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
       </div>
@@ -59,17 +68,19 @@ export function TechStackSection() {
   );
 }
 
-const MarqueeRow = ({ items }: { items: string[] }) => {
+const MarqueeRow = ({ items, reverse = false }: { items: string[], reverse?: boolean }) => {
   return (
     <div className="flex min-w-full shrink-0 items-center justify-around gap-4">
-      {items.map((text) => (
-        <Badge
+      {items.map((text, i) => (
+        <div
           key={text}
-          variant="secondary"
-          className="text-lg md:text-xl whitespace-nowrap px-6 py-2 border-primary/20 border"
+          className={cn(
+            "text-lg md:text-base whitespace-nowrap px-6 py-3 border rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-1 font-minecraft",
+            colors[(i + (reverse ? 2 : 0)) % colors.length]
+          )}
         >
           {text}
-        </Badge>
+        </div>
       ))}
     </div>
   );
