@@ -5,8 +5,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import type React from "react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export function Header() {
+  const { toast } = useToast();
+  const [clickCount, setClickCount] = useState(0);
+
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Favorites", href: "#favorites" },
@@ -28,6 +33,18 @@ export function Header() {
         top: offsetPosition,
         behavior: "smooth"
       });
+    }
+  };
+
+  const handleLogoClick = () => {
+    const newClickCount = clickCount + 1;
+    setClickCount(newClickCount);
+    if (newClickCount === 5) {
+      toast({
+        title: "...",
+        description: "So it's the same type of stand as Star Platinum.",
+      });
+      setClickCount(0); // Reset counter
     }
   };
 
@@ -56,7 +73,7 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50 bg-background/50 backdrop-blur-lg font-headline shadow-[0_1px_0_hsl(var(--primary)/0.1)]"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors font-minecraft">
+        <Link href="/" onClick={handleLogoClick} className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors font-minecraft">
           <span className="opacity-75">M</span>S
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
