@@ -102,16 +102,6 @@ body {
   100% { transform: scale(1); opacity: 1; }
 }
 
-@keyframes breathing-bg {
-  0% { background-color: hsl(var(--background)); }
-  50% { background-color: hsl(275 100% 4%); } /* A slightly darker shade */
-  100% { background-color: hsl(var(--background)); }
-}
-
-.breathing-background {
-  animation: breathing-bg 8s ease-in-out infinite;
-}
-
 @keyframes pulse-icon {
   0%, 100% {
     transform: scale(1);
