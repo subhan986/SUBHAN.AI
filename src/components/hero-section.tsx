@@ -40,7 +40,7 @@ export function HeroSection() {
           <Button asChild size="lg" className="rounded-full">
             <a href="#projects">View My Work</a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="rounded-full">
+          <Button asChild size="lg" variant="outline" className="rounded-full bg-black/20 backdrop-blur-sm border-white/20 hover:bg-black/30">
             <a href="#contact">Get In Touch</a>
           </Button>
         </motion.div>
