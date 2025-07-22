@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Bio-AI Simulation Platform",
     description: "A platform for real-time 3D simulation and visualization of gene circuits, leveraging AI to predict biological interactions.",
-    image: "/bioai.png",
+    image: "/Bioai.png",
     imageHint: "biotechnology abstract",
     tags: ["Next.js", "3D", "AI", "Biology"],
     liveUrl: "#",
@@ -39,7 +39,7 @@ const projects = [
   {
     title: "AI-Powered Code Assistant",
     description: "A smart assistant integrated into the IDE that suggests code, finds bugs, and explains complex algorithms to streamline development.",
-    image: "https://placehold.co/600x400.png",
+    image: "/ai code assistant.png",
     imageHint: "purple code",
     tags: ["AI", "VS Code", "TypeScript", "Machine Learning"],
     liveUrl: "#",
@@ -48,7 +48,7 @@ const projects = [
   {
     title: "Decentralized Social Media App",
     description: "A concept for a social media platform built on blockchain technology, ensuring user privacy and data ownership.",
-    image: "https://placehold.co/600x400.png",
+    image: "/social media.png",
     imageHint: "purple network",
     tags: ["Web3", "Solidity", "React", "IPFS"],
     liveUrl: "#",
@@ -57,7 +57,7 @@ const projects = [
   {
     title: "Interactive Data Visualization Dashboard",
     description: "A powerful dashboard that allows users to upload datasets and generate beautiful, interactive charts and graphs to discover insights.",
-    image: "https://placehold.co/600x400.png",
+    image: "/dataapp.png",
     imageHint: "purple dashboard",
     tags: ["D3.js", "React", "DataViz", "SaaS"],
     liveUrl: "#",
