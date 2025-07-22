@@ -21,6 +21,7 @@ export default {
         body: ['Inter', 'sans-serif'],
         headline: ['"Press Start 2P"', 'cursive'],
         minecraft: ['"Press Start 2P"', 'cursive'],
+        sans: ['"Space Grotesk"', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

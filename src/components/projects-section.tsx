@@ -112,7 +112,7 @@ export function ProjectsSection() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="font-headline">{project.title}</CardTitle>
+                    <CardTitle className="font-sans">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col">
                     <p className="text-foreground/80 mb-4 flex-grow font-body">{project.description}</p>
