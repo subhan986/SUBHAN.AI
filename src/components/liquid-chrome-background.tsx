@@ -52,8 +52,8 @@ const fragmentShader = `
     vec2 mouse = u_mouse.xy / u_resolution.xy;
     float dist = distance(st, vec2(mouse.x, 1.0 - mouse.y));
 
-    float noise = snoise(vUv * 2.0 + u_time * 0.05);
-    float liquid = snoise(vUv * 1.5 + u_time * 0.1 + noise + (1.0 - dist) * 1.0);
+    float noise = snoise(vUv * 4.0 + u_time * 0.05);
+    float liquid = snoise(vUv * 3.0 + u_time * 0.1 + noise + (1.0 - dist) * 1.0);
     
     vec3 color = vec3(0.0);
     

@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import { LiquidChromeBackground } from './liquid-chrome-background';
+import { ShinyCard } from './shiny-card';
 
 export function AboutSection() {
   return (
@@ -32,19 +33,21 @@ export function AboutSection() {
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
-            <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
-                 <LiquidChromeBackground />
-                 <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover -z-10">
-                    <source src="/about-video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                 </video>
-                 <Image
-                    src="/Adobe Express - file.png"
-                    alt="A portrait of Muhammad Subhan"
-                    fill
-                    className="object-contain"
-                  />
-            </div>
+            <ShinyCard className="rounded-lg">
+                <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                     <LiquidChromeBackground />
+                     <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover -z-10">
+                        <source src="/about-video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                     </video>
+                     <Image
+                        src="/Adobe Express - file.png"
+                        alt="A portrait of Muhammad Subhan"
+                        fill
+                        className="object-contain"
+                      />
+                </div>
+            </ShinyCard>
           </div>
         </div>
       </div>
