@@ -23,10 +23,10 @@ export function AboutSection() {
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                 <Image
                     src={profileImageUrl}
-                    alt="Star Platinum"
+                    alt="Dio"
                     fill
                     className="object-cover rounded-lg"
-                    data-ai-hint="Star Platinum anime"
+                    data-ai-hint="Dio Brando anime"
                 />
             </div>
           </div>
@@ -34,10 +34,10 @@ export function AboutSection() {
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                <Image
                   src={profileImageUrl}
-                  alt="Star Platinum"
+                  alt="Dio"
                   fill
                   className="object-cover rounded-lg"
-                  data-ai-hint="Star Platinum anime"
+                  data-ai-hint="Dio Brando anime"
                 />
             </div>
           </div>
