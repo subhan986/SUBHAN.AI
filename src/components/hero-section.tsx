@@ -20,7 +20,7 @@ export function HeroSection() {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2 font-minecraft">
           Muhammad Subhan
         </h1>
-        <p className="mt-4 text-lg md:text-xl font-medium text-cyan-400 font-minecraft">
+        <p className="mt-4 text-lg md:text-xl font-medium text-beige-200 font-minecraft">
           Developer ✦ AI Builder ✦ Visual Thinker
         </p>
         <motion.p 

@@ -23,6 +23,9 @@ export default {
         code: ['monospace'],
       },
       colors: {
+        beige: {
+          '200': '#F5F5DC',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
