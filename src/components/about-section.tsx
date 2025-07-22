@@ -26,7 +26,7 @@ export function AboutSection() {
                 </video>
                 <div className="absolute inset-0 bg-black/30 backdrop-blur-sm -z-10"></div>
                 <Image
-                    src="/Adobe Express - file.png"
+                    src="/Adobe Express - file.png?v=2"
                     alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-contain"
@@ -43,7 +43,7 @@ export function AboutSection() {
                      </video>
                      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm -z-10"></div>
                      <Image
-                        src="/Adobe Express - file.png"
+                        src="/Adobe Express - file.png?v=2"
                         alt="A portrait of Muhammad Subhan"
                         fill
                         className="object-contain"
