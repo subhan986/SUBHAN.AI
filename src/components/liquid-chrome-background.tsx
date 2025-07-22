@@ -55,9 +55,6 @@ const fragmentShader = `
     float noise = snoise(vUv * 3.0 + u_time * 0.1);
     float liquid = snoise(vUv * 2.0 + u_time * 0.2 + noise + (1.0 - dist) * 2.0);
     
-    vec2 p = -1.0 + 2.0 * vUv;
-    float len = length(p);
-    
     vec3 color = vec3(0.0);
     
     float chrome = smoothstep(0.4, 0.6, liquid);
@@ -67,9 +64,6 @@ const fragmentShader = `
     vec3 accentColor = vec3(0.8, 0.3, 0.9);
 
     color = mix(baseColor, accentColor, chrome);
-    
-    float vignette = smoothstep(1.0, 0.9, len);
-    color *= vignette;
     
     gl_FragColor = vec4(color, 1.0);
   }
