@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section id="home" className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden pt-16">
       <LiquidChromeBackground />
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
