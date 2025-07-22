@@ -9,6 +9,7 @@ import { ValuesSection } from "@/components/values-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { useEffect, useState } from "react";
+import { GridBackground } from "@/components/grid-background";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +26,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <div className="main-background">
+        <GridBackground>
           <div className="space-y-20 md:space-y-32">
             <AboutSection />
             <SkillsSection />
@@ -34,7 +35,7 @@ export default function Home() {
             <ContactSection />
           </div>
           <Footer />
-        </div>
+        </GridBackground>
       </main>
     </div>
   );
