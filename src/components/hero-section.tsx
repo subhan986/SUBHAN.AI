@@ -5,40 +5,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 
 export function HeroSection() {
-  const name = "Muhammad Subhan";
-  const letters = Array.from(name);
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
-    }),
-  };
-
-  const child = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      x: -20,
-      y: 10,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-  };
-
   return (
     <section id="home" className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden pt-16">
       <div className="absolute inset-0 animated-gradient z-0"></div>
@@ -49,23 +15,9 @@ export function HeroSection() {
         transition={{ duration: 0.8 }}
         className="z-10 flex flex-col items-center px-4"
       >
-        <motion.h1 
-          className="text-5xl md:text-7xl lg:text-8xl font-bold font-minecraft bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2 flex overflow-hidden"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={child}
-              whileHover={{ scale: 1.2, color: '#ffffff', transition: { type: 'spring', stiffness: 300 } }}
-              style={{ display: 'inline-block', whiteSpace: 'pre' }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.h1>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-minecraft bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
+          Muhammad Subhan
+        </h1>
         <p className="mt-4 text-lg md:text-xl font-medium text-primary">
           Developer ✦ AI Builder ✦ Visual Thinker
         </p>
