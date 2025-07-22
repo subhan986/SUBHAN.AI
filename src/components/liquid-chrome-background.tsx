@@ -68,7 +68,7 @@ const fragmentShader = `
 
     color = mix(baseColor, accentColor, chrome);
     
-    float vignette = smoothstep(1.0, 0.6, len);
+    float vignette = smoothstep(1.0, 0.9, len);
     color *= vignette;
     
     gl_FragColor = vec4(color, 1.0);
