@@ -59,7 +59,7 @@ export function HeroSection() {
             <motion.span
               key={index}
               variants={child}
-              whileHover={{ y: -10, transition: { type: 'spring', stiffness: 300 } }}
+              whileHover={{ scale: 1.2, color: '#ffffff', transition: { type: 'spring', stiffness: 300 } }}
               style={{ display: 'inline-block', whiteSpace: 'pre' }}
             >
               {letter}
