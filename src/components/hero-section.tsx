@@ -14,7 +14,7 @@ export function HeroSection() {
         transition={{ duration: 0.8 }}
         className="z-10 flex flex-col items-center px-4"
       >
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-minecraft bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
           Muhammad Subhan
         </h1>
         <p className="mt-4 text-lg md:text-xl font-medium text-primary">

@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
+        minecraft: ['"Press Start 2P"', 'cursive'],
         code: ['monospace'],
       },
       colors: {
