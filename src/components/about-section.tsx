@@ -1,30 +1,7 @@
 
-"use client";
-
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { generateImage } from '@/ai/flows/generate-image-flow';
 
 export function AboutSection() {
-  const [profileImageUrl, setProfileImageUrl] = useState("https://placehold.co/400x400.png");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const generate = async () => {
-      try {
-        const { imageUrl } = await generateImage({ prompt: "An intimidating, anime-style portrait of Dio Brando from Jojo's Bizarre Adventure." });
-        if (imageUrl) {
-          setProfileImageUrl(imageUrl);
-        }
-      } catch (error) {
-        console.error("Failed to generate image:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    generate();
-  }, []);
-
   return (
     <section id="about" className="py-10 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,28 +17,22 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
-                {loading ? <div className="w-full h-full bg-card animate-pulse" /> :
                 <Image
-                    src={profileImageUrl}
-                    alt="An AI-generated portrait of Dio Brando"
+                    src="/about.png"
+                    alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-cover rounded-lg"
-                    data-ai-hint="Dio Brando anime"
                 />
-              }
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
-              {loading ? <div className="w-full h-full bg-card animate-pulse" /> :
                  <Image
-                    src={profileImageUrl}
-                    alt="An AI-generated portrait of Dio Brando"
+                    src="/about.png"
+                    alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-cover rounded-lg"
-                    data-ai-hint="Dio Brando anime"
                   />
-              }
             </div>
           </div>
         </div>
