@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Users, Blend, BookOpen } from "lucide-react";
+import { ShinyCard } from "./shiny-card";
 
 const values = [
   {
@@ -53,10 +54,14 @@ export function ValuesSection() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
           {values.map((value, index) => (
-            <motion.li key={index} variants={itemVariants} className="flex flex-col items-center space-y-4 p-6 bg-card/50 rounded-lg border border-transparent hover:border-primary transition-colors">
-              {value.icon}
-              <h3 className="text-xl font-bold font-headline">{value.title}</h3>
-              <p className="text-foreground/80 font-headline">{value.description}</p>
+            <motion.li key={index} variants={itemVariants}>
+              <ShinyCard>
+                <div className="flex flex-col items-center space-y-4 p-6 bg-card/50 rounded-lg border border-transparent hover:border-primary transition-colors">
+                  {value.icon}
+                  <h3 className="text-xl font-bold font-headline">{value.title}</h3>
+                  <p className="text-foreground/80 font-headline">{value.description}</p>
+                </div>
+              </ShinyCard>
             </motion.li>
           ))}
         </motion.ul>

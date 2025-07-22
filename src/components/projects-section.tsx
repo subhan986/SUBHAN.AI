@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Github, Link as LinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ShinyCard } from "./shiny-card";
 
 const projects = [
   {
@@ -95,40 +96,43 @@ export function ProjectsSection() {
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.5 }}
               variants={cardVariants}
+              className="h-full"
             >
-              <Card className="h-full flex flex-col bg-card/50 border-border overflow-hidden group">
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={project.imageHint}
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="font-headline">{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col">
-                  <p className="text-foreground/80 mb-4 flex-grow font-headline">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4 font-headline">
-                    {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+              <ShinyCard className="h-full">
+                <Card className="h-full flex flex-col bg-card/50 border-border overflow-hidden group">
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={project.imageHint}
+                    />
                   </div>
-                </CardContent>
-                <CardFooter className="flex items-center space-x-4 mt-auto pt-4 border-t border-border font-headline">
-                  <Button variant="outline" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <LinkIcon className="mr-2 h-4 w-4" /> Live Demo
-                    </a>
-                  </Button>
-                  <Button variant="ghost" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> GitHub
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
+                  <CardHeader>
+                    <CardTitle className="font-headline">{project.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <p className="text-foreground/80 mb-4 flex-grow font-headline">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4 font-headline">
+                      {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex items-center space-x-4 mt-auto pt-4 border-t border-border font-headline">
+                    <Button variant="outline" asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <LinkIcon className="mr-2 h-4 w-4" /> Live Demo
+                      </a>
+                    </Button>
+                    <Button variant="ghost" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" /> GitHub
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </ShinyCard>
             </motion.div>
           ))}
         </div>

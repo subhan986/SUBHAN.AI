@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Code2, BrainCircuit, PenTool, GraduationCap, Dna, Rocket } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ShinyCard } from "./shiny-card";
 
 const skills = [
   {
@@ -69,15 +70,17 @@ export function SkillsSection() {
               viewport={{ once: true, amount: 0.5 }}
               variants={cardVariants}
             >
-              <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-2">
-                <CardHeader className="flex flex-col items-center text-center">
-                  {skill.icon}
-                  <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center text-foreground/80 font-headline">
-                  <p>{skill.description}</p>
-                </CardContent>
-              </Card>
+              <ShinyCard className="h-full">
+                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-2">
+                  <CardHeader className="flex flex-col items-center text-center">
+                    {skill.icon}
+                    <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center text-foreground/80 font-headline">
+                    <p>{skill.description}</p>
+                  </CardContent>
+                </Card>
+              </ShinyCard>
             </motion.div>
           ))}
         </div>

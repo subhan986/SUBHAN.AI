@@ -100,3 +100,31 @@ body {
   50% { transform: scale(1.2); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+@layer utilities {
+  .shiny-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shiny-effect::before {
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(
+      hsl(var(--primary) / 0.2),
+      transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+    pointer-events: none;
+  }
+
+  .shiny-effect:hover::before {
+    opacity: 1;
+  }
+}
