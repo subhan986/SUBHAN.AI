@@ -37,12 +37,16 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-8 flex gap-4 font-headline"
         >
-          <Button asChild size="lg" className="rounded-full">
-            <a href="#projects">View My Work</a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="rounded-full bg-black/20 backdrop-blur-sm border-white/20 hover:bg-black/30">
-            <a href="#contact">Get In Touch</a>
-          </Button>
+          <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}>
+            <Button asChild size="lg" className="rounded-full transition-all duration-300 shadow-[0_0_0_0_hsl(var(--primary))] hover:shadow-[0_0_20px_0px_hsl(var(--primary)/0.5)]">
+              <a href="#projects">View My Work</a>
+            </Button>
+          </motion.div>
+           <motion.div whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}>
+            <Button asChild size="lg" variant="outline" className="rounded-full bg-black/20 backdrop-blur-sm border-white/20 hover:bg-black/40 hover:border-white/50 transition-all duration-300">
+              <a href="#contact">Get In Touch</a>
+            </Button>
+          </motion.div>
         </motion.div>
       </motion.div>
       <motion.a
