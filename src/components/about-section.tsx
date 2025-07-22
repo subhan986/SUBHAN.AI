@@ -21,9 +21,8 @@ export function AboutSection() {
                 <Image
                     src={profileImageUrl}
                     alt="Muhammad Subhan"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    className="object-cover rounded-lg"
                     data-ai-hint="person portrait"
                 />
             </div>
@@ -33,9 +32,8 @@ export function AboutSection() {
                <Image
                   src={profileImageUrl}
                   alt="Muhammad Subhan"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
+                  fill
+                  className="object-cover rounded-lg"
                   data-ai-hint="person portrait"
                 />
             </div>
