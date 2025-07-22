@@ -30,6 +30,7 @@ export function AboutSection() {
                     alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-contain"
+                    quality={100}
                 />
             </div>
           </div>
@@ -47,6 +48,7 @@ export function AboutSection() {
                         alt="A portrait of Muhammad Subhan"
                         fill
                         className="object-contain"
+                        quality={100}
                       />
                 </div>
             </ShinyCard>
