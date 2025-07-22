@@ -11,7 +11,7 @@ const Loader = () => {
     setIsMounted(true);
     const timer = setTimeout(() => {
       setShow(false);
-    }, 2800); // Duration of the loader
+    }, 1000); // Duration of the loader
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,14 +24,14 @@ const Loader = () => {
     <motion.div
       initial={{ opacity: 1 }}
       animate={{ opacity: show ? 1 : 0 }}
-      transition={{ duration: 0.5, delay: show ? 0 : 2.5 }}
+      transition={{ duration: 0.5, delay: show ? 0 : 0.7 }}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-background pointer-events-none"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1, 1, 0.8] }}
         transition={{
-          duration: 2.5,
+          duration: 1,
           ease: "easeInOut",
           times: [0, 0.2, 0.8, 1],
         }}
