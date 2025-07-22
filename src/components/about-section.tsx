@@ -16,25 +16,23 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
-                <video
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                <Image
+                    src="/about.png"
+                    alt="Muhammad Subhan"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
                 />
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
-               <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute top-0 left-0 w-full h-full object-cover"
+               <Image
+                  src="/about.png"
+                  alt="Muhammad Subhan"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
                 />
             </div>
           </div>
