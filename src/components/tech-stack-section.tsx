@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import { useRef } from "react";
 
 const techStackTop = [
   "HTML",
@@ -28,11 +29,19 @@ const techStackBottom = [
   "Vercel",
 ];
 
-const allTech = [...techStackTop, ...techStackBottom];
-
 export function TechStackSection() {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const x1 = useTransform(scrollYProgress, [0, 1], ["5%", "-25%"]);
+  const x2 = useTransform(scrollYProgress, [0, 1], ["-5%", "25%"]);
+
+
   return (
-    <section id="tech-stack" className="py-10 lg:py-16">
+    <section id="tech-stack" ref={targetRef} className="py-10 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary mb-2">
           My Tech Stack
@@ -42,25 +51,25 @@ export function TechStackSection() {
         </p>
       </div>
       <div className="relative flex flex-col gap-4 overflow-hidden">
-        <div className="flex -translate-x-1/4">
+        <motion.div style={{ x: x1 }} className="flex gap-4">
           <MarqueeRow items={techStackTop} />
           <MarqueeRow items={techStackTop} />
           <MarqueeRow items={techStackTop} />
-        </div>
-         <div className="flex -translate-x-1/4">
-          <MarqueeRow items={techStackBottom} reverse />
-          <MarqueeRow items={techStackBottom} reverse />
-          <MarqueeRow items={techStackBottom} reverse />
-        </div>
+        </motion.div>
+         <motion.div style={{ x: x2 }} className="flex gap-4">
+          <MarqueeRow items={techStackBottom} />
+          <MarqueeRow items={techStackBottom} />
+          <MarqueeRow items={techStackBottom} />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
       </div>
     </section>
   );
 }
 
-const MarqueeRow = ({ items, reverse = false }: { items: string[], reverse?: boolean }) => {
+const MarqueeRow = ({ items }: { items: string[] }) => {
   return (
-    <div className={`flex min-w-full shrink-0 items-center justify-around gap-4 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+    <div className="flex min-w-full shrink-0 items-center justify-around gap-4">
       {items.map((text) => (
         <Badge
           key={text}
