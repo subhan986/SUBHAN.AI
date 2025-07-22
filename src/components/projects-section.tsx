@@ -39,8 +39,8 @@ const projects = [
   {
     title: "AI-Powered Code Assistant",
     description: "A smart assistant integrated into the IDE that suggests code, finds bugs, and explains complex algorithms to streamline development.",
-    image: "https://placehold.co/600x400.png",
-    imageHint: "code programming",
+    image: "/code-assistant.png",
+    imageHint: "purple code",
     tags: ["AI", "VS Code", "TypeScript", "Machine Learning"],
     liveUrl: "#",
     githubUrl: "#",
@@ -48,8 +48,8 @@ const projects = [
   {
     title: "Decentralized Social Media App",
     description: "A concept for a social media platform built on blockchain technology, ensuring user privacy and data ownership.",
-    image: "https://placehold.co/600x400.png",
-    imageHint: "blockchain network",
+    image: "/decentralized-social.png",
+    imageHint: "purple network",
     tags: ["Web3", "Solidity", "React", "IPFS"],
     liveUrl: "#",
     githubUrl: "#",
@@ -57,8 +57,8 @@ const projects = [
   {
     title: "Interactive Data Visualization Dashboard",
     description: "A powerful dashboard that allows users to upload datasets and generate beautiful, interactive charts and graphs to discover insights.",
-    image: "https://placehold.co/600x400.png",
-    imageHint: "data dashboard",
+    image: "/data-dashboard.png",
+    imageHint: "purple dashboard",
     tags: ["D3.js", "React", "DataViz", "SaaS"],
     liveUrl: "#",
     githubUrl: "#",
