@@ -28,7 +28,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <GridBackground>
-          <div className="space-y-20 md:space-y-32">
+          <div className="space-y-10 md:space-y-16">
             <AboutSection />
             <FavoritesSection />
             <SkillsSection />
