@@ -24,11 +24,12 @@ export function AboutSection() {
                   <source src="/about-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <div className="absolute inset-0 bg-black/30 backdrop-blur-sm -z-10"></div>
                 <Image
                     src="/Adobe Express - file.png"
                     alt="A portrait of Muhammad Subhan"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                 />
             </div>
           </div>
@@ -40,11 +41,12 @@ export function AboutSection() {
                         <source src="/about-video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                      </video>
+                     <div className="absolute inset-0 bg-black/30 backdrop-blur-sm -z-10"></div>
                      <Image
                         src="/Adobe Express - file.png"
                         alt="A portrait of Muhammad Subhan"
                         fill
-                        className="object-cover"
+                        className="object-contain"
                       />
                 </div>
             </ShinyCard>
