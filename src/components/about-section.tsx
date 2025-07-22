@@ -28,7 +28,7 @@ export function AboutSection() {
                     src="/Adobe Express - file.png"
                     alt="A portrait of Muhammad Subhan"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                 />
             </div>
           </div>
@@ -44,7 +44,7 @@ export function AboutSection() {
                         src="/Adobe Express - file.png"
                         alt="A portrait of Muhammad Subhan"
                         fill
-                        className="object-contain"
+                        className="object-cover"
                       />
                 </div>
             </ShinyCard>
