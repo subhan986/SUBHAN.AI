@@ -32,6 +32,7 @@ export function AboutSection() {
                     className="object-contain"
                     quality={100}
                 />
+                <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
@@ -50,6 +51,7 @@ export function AboutSection() {
                         className="object-contain"
                         quality={100}
                       />
+                      <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
                 </div>
             </ShinyCard>
           </div>
