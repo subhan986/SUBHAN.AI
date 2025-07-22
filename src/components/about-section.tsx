@@ -1,7 +1,27 @@
+
+"use client";
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { generateImage } from '@/ai/flows/generate-image-flow';
 
 export function AboutSection() {
-  const profileImageUrl = "https://placehold.co/400x400.png";
+  const [profileImageUrl, setProfileImageUrl] = useState("https://placehold.co/400x400.png");
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const result = await generateImage({ prompt: "A minimalist, anime-style portrait of Jotaro Kujo from JoJo's Bizarre Adventure, with a dark, moody background." });
+        if (result.imageUrl) {
+          setProfileImageUrl(result.imageUrl);
+        }
+      } catch (error) {
+        console.error("Failed to generate image:", error);
+      }
+    };
+
+    fetchImage();
+  }, []);
 
   return (
     <section id="about" className="py-10 lg:py-16">
