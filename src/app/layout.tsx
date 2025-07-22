@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
     images: ['https://placehold.co/1200x630.png'], // Replace with an actual OG image
   },
+  icons: {
+    icon: '/favicon.svg',
+  }
 };
 
 export default function RootLayout({
