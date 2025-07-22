@@ -17,17 +17,17 @@ export function HeroSection() {
         transition={{ duration: 0.8 }}
         className="z-10 flex flex-col items-center px-4"
       >
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-minecraft bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
           Muhammad Subhan
         </h1>
-        <p className="mt-4 text-lg md:text-xl font-medium text-primary">
+        <p className="mt-4 text-lg md:text-xl font-medium text-primary font-headline">
           Developer ✦ AI Builder ✦ Visual Thinker
         </p>
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl text-xl md:text-2xl text-foreground/80"
+          className="mt-6 max-w-2xl text-xl md:text-2xl text-foreground/80 font-headline"
         >
           Crafting meaningful digital experiences.
         </motion.p>
@@ -35,7 +35,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-8 flex gap-4"
+          className="mt-8 flex gap-4 font-headline"
         >
           <Button asChild size="lg">
             <a href="#projects">View My Work</a>

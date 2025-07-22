@@ -7,7 +7,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-5 gap-12 items-center">
           <div className="md:col-span-3 space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">About Me</h2>
-            <div className="text-lg text-foreground/80 space-y-4">
+            <div className="text-lg text-foreground/80 space-y-4 font-headline">
               <p>
                 I'm a developer and AI builder from Faisalabad, Pakistan, passionate about the fusion of creativity, code, and intelligence. 
               </p>

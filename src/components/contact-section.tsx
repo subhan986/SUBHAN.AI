@@ -14,10 +14,10 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">Connect With Me</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-headline">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.
           </p>
-          <div className="mt-8 flex justify-center items-center flex-wrap gap-4">
+          <div className="mt-8 flex justify-center items-center flex-wrap gap-4 font-headline">
             <Button asChild size="lg">
               <a href="mailto:subyounas@gmail.com">
                 <Mail className="mr-2 h-5 w-5" />
