@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -7,6 +8,7 @@ import { cn } from '@/lib/utils';
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
@@ -24,30 +26,38 @@ const CustomCursor = () => {
         setIsHovering(false);
       }
     };
+    
+    const handleMouseDown = () => setIsClicking(true);
+    const handleMouseUp = () => setIsClicking(false);
 
     window.addEventListener('mousemove', mouseMove);
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
 
     return () => {
       window.removeEventListener('mousemove', mouseMove);
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
     };
   }, []);
 
   return (
     <motion.div
       className={cn(
-        "fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] transition-transform duration-300",
-        "bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg"
+        "fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999]",
+        "bg-white/10 backdrop-blur-sm border border-white/20",
+        "pulsing-glow"
       )}
       style={{
         translateX: position.x - 16,
         translateY: position.y - 16,
       }}
       animate={{
-        scale: isHovering ? 1.5 : 1,
+        scale: isClicking ? 0.8 : (isHovering ? 1.5 : 1),
       }}
       transition={{ type: 'spring', stiffness: 500, damping: 30, mass: 0.5 }}
     />
