@@ -27,7 +27,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl text-xl md:text-2xl text-foreground/80 font-headline"
+          className="mt-6 max-w-2xl text-xl md:text-2xl text-foreground/80 font-body"
         >
           Crafting meaningful digital experiences.
         </motion.p>
