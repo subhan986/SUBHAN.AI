@@ -34,6 +34,33 @@ const projects = [
     liveUrl: "#",
     githubUrl: "#",
   },
+  {
+    title: "AI-Powered Code Assistant",
+    description: "A smart assistant integrated into the IDE that suggests code, finds bugs, and explains complex algorithms to streamline development.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "code programming",
+    tags: ["AI", "VS Code", "TypeScript", "Machine Learning"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Decentralized Social Media App",
+    description: "A concept for a social media platform built on blockchain technology, ensuring user privacy and data ownership.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "blockchain network",
+    tags: ["Web3", "Solidity", "React", "IPFS"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Interactive Data Visualization Dashboard",
+    description: "A powerful dashboard that allows users to upload datasets and generate beautiful, interactive charts and graphs to discover insights.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "data dashboard",
+    tags: ["D3.js", "React", "DataViz", "SaaS"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
 ];
 
 export function ProjectsSection() {
