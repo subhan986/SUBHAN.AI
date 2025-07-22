@@ -52,16 +52,16 @@ const fragmentShader = `
     vec2 mouse = u_mouse.xy / u_resolution.xy;
     float dist = distance(st, vec2(mouse.x, 1.0 - mouse.y));
 
-    float noise = snoise(vUv * 3.0 + u_time * 0.1);
-    float liquid = snoise(vUv * 2.0 + u_time * 0.2 + noise + (1.0 - dist) * 2.0);
+    float noise = snoise(vUv * 2.0 + u_time * 0.05);
+    float liquid = snoise(vUv * 1.5 + u_time * 0.1 + noise + (1.0 - dist) * 1.0);
     
     vec3 color = vec3(0.0);
     
-    float chrome = smoothstep(0.4, 0.6, liquid);
-    chrome -= smoothstep(0.7, 0.9, liquid);
+    float chrome = smoothstep(0.5, 0.7, liquid);
+    chrome -= smoothstep(0.8, 1.0, liquid);
 
-    vec3 baseColor = vec3(0.1, 0.1, 0.2);
-    vec3 accentColor = vec3(0.8, 0.3, 0.9);
+    vec3 baseColor = vec3(0.05, 0.05, 0.1);
+    vec3 accentColor = vec3(0.6, 0.2, 0.8);
 
     color = mix(baseColor, accentColor, chrome);
     
