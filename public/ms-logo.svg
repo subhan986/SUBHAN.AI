@@ -1,6 +1,11 @@
-<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="white"/>
+    <circle cx="100" cy="100" r="90" fill="black"/>
     <style>
-        .minecraft-font { font-family: 'Press Start 2P', cursive; fill: black; }
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        .minecraft-font { font-family: 'Press Start 2P', cursive; }
     </style>
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="minecraft-font" font-size="200">MS</text>
+    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="minecraft-font" font-size="60" fill="white">
+        MS
+    </text>
 </svg>
