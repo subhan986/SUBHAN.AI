@@ -6,27 +6,27 @@ import { ShinyCard } from "./shiny-card";
 
 const favorites = [
   {
-    icon: <Tv className="w-10 h-10 text-primary" />,
+    icon: <Tv className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Anime",
     description: "Jojo's Bizarre Adventure & Death Note are my top picks.",
   },
   {
-    icon: <BookOpen className="w-10 h-10 text-primary" />,
+    icon: <BookOpen className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Books",
     description: "Always looking for a good story to dive into.",
   },
   {
-    icon: <Music className="w-10 h-10 text-primary" />,
+    icon: <Music className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Music",
     description: "Exploring different genres and finding new artists.",
   },
   {
-    icon: <Code2 className="w-10 h-10 text-primary" />,
+    icon: <Code2 className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Web Development",
     description: "Building and creating things for the web.",
   },
   {
-    icon: <Palette className="w-10 h-10 text-primary" />,
+    icon: <Palette className="w-10 h-10 text-primary pulsing-icon" />,
     title: "UI Design",
     description: "Passionate about creating beautiful and intuitive interfaces.",
   },
@@ -66,7 +66,8 @@ export function FavoritesSection() {
               variants={cardVariants}
             >
               <ShinyCard className="h-full">
-                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 relative overflow-hidden">
+                   <div className="animated-gradient absolute inset-0 -z-10"></div>
                   <CardHeader className="flex flex-col items-center text-center">
                     {fav.icon}
                     <CardTitle className="mt-4 font-headline text-lg">{fav.title}</CardTitle>

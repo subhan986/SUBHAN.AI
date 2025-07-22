@@ -112,6 +112,21 @@ body {
   animation: breathing-bg 8s ease-in-out infinite;
 }
 
+@keyframes pulse-icon {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px hsl(var(--primary)));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px hsl(var(--primary)));
+  }
+}
+
+.pulsing-icon {
+  animation: pulse-icon 3s ease-in-out infinite;
+}
+
 @layer utilities {
   .shiny-effect {
     position: relative;

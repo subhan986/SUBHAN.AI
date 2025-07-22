@@ -7,32 +7,32 @@ import { ShinyCard } from "./shiny-card";
 
 const skills = [
   {
-    icon: <Code2 className="w-10 h-10 text-primary" />,
+    icon: <Code2 className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Web Development",
     description: "HTML, CSS, JS, Node.js, Firebase, and Next.js for building modern web applications.",
   },
   {
-    icon: <BrainCircuit className="w-10 h-10 text-primary" />,
+    icon: <BrainCircuit className="w-10 h-10 text-primary pulsing-icon" />,
     title: "AI Integration",
     description: "Experience with OpenAI & Gemini APIs to build prompt-based tools and intelligent systems.",
   },
   {
-    icon: <PenTool className="w-10 h-10 text-primary" />,
+    icon: <PenTool className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Product Design + Front-End",
     description: "Crafting beautiful UIs with Tailwind CSS and creating fluid user experiences with animations.",
   },
   {
-    icon: <GraduationCap className="w-10 h-10 text-primary" />,
+    icon: <GraduationCap className="w-10 h-10 text-primary pulsing-icon" />,
     title: "EdTech Projects",
     description: "Building educational tools like StudySync AI to help students learn more effectively.",
   },
   {
-    icon: <Dna className="w-10 h-10 text-primary" />,
+    icon: <Dna className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Bio x AI Projects",
     description: "Exploring synthetic gene circuits, 3D visualizations, and real-time AI in biology.",
   },
   {
-    icon: <Rocket className="w-10 h-10 text-primary" />,
+    icon: <Rocket className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Hackathon & MVP Builds",
     description: "Rapidly prototyping ideas, like a 3D gravity simulator, for hackathons and MVPs.",
   },
@@ -72,7 +72,8 @@ export function SkillsSection() {
               variants={cardVariants}
             >
               <ShinyCard className="h-full">
-                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 relative overflow-hidden">
+                  <div className="animated-gradient absolute inset-0 -z-10"></div>
                   <CardHeader className="flex flex-col items-center text-center">
                     {skill.icon}
                     <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
