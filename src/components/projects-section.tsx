@@ -86,7 +86,7 @@ export function ProjectsSection() {
     <section id="projects" className="py-10 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">Featured Projects</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold font-headline text-primary">Featured Projects</h2>
           <p className="mt-2 text-lg text-foreground/80 font-body">My work has no weaknesses.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

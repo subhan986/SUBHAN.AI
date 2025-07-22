@@ -14,7 +14,7 @@ export function ContactSection() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">Connect With Me</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold font-headline text-primary">Connect With Me</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-body">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.
           </p>
