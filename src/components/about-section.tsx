@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 export function AboutSection() {
+  const profileImageUrl = "https://media.licdn.com/dms/image/v2/D5635AQHMYApcCGJFFw/profile-framedphoto-shrink_400_400/B56Zgxkp2RHQAk-/0/1753178349257?e=1753783200&v=beta&t=kx_Neyz8BexXSabgMBd2lnGuOwBJ8nTZy3_CThPXzeU";
+
   return (
     <section id="about" className="py-10 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,22 +19,24 @@ export function AboutSection() {
             </div>
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                 <Image
-                    src="/about.png"
+                    src={profileImageUrl}
                     alt="Muhammad Subhan"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-lg"
+                    data-ai-hint="person portrait"
                 />
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                <Image
-                  src="/about.png"
+                  src={profileImageUrl}
                   alt="Muhammad Subhan"
                   layout="fill"
                   objectFit="cover"
                   className="rounded-lg"
+                  data-ai-hint="person portrait"
                 />
             </div>
           </div>
