@@ -8,6 +8,7 @@ import { Menu } from "lucide-react";
 export function Header() {
   const navItems = [
     { name: "About", href: "#about" },
+    { name: "Favorites", href: "#favorites" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },

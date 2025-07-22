@@ -3,6 +3,7 @@
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
+import { FavoritesSection } from "@/components/favorites-section";
 import { SkillsSection } from "@/components/skills-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ValuesSection } from "@/components/values-section";
@@ -29,6 +30,7 @@ export default function Home() {
         <GridBackground>
           <div className="space-y-20 md:space-y-32">
             <AboutSection />
+            <FavoritesSection />
             <SkillsSection />
             <ProjectsSection />
             <ValuesSection />
