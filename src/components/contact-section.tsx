@@ -10,8 +10,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { sendMessage } from "@/ai/flows/send-message-flow";
-import type { SendMessageInput } from "@/ai/flows/send-message-flow";
 
 const SendMessageFormSchema = z.object({
   name: z.string().min(1, { message: "Name is required." }),
@@ -19,6 +17,7 @@ const SendMessageFormSchema = z.object({
   message: z.string().min(1, { message: "Message is required." }),
 });
 
+type SendMessageInput = z.infer<typeof SendMessageFormSchema>;
 
 export function ContactSection() {
     const { toast } = useToast();
@@ -33,20 +32,13 @@ export function ContactSection() {
     });
 
     async function onSubmit(values: SendMessageInput) {
-        try {
-            await sendMessage(values);
-            toast({
-                title: "Message Sent! 🚀",
-                description: "Thanks for reaching out. I'll get back to you soon!",
-            });
-            form.reset();
-        } catch (error) {
-            toast({
-                variant: "destructive",
-                title: "Uh oh! Something went wrong.",
-                description: "There was a problem sending your message. Please try again.",
-            });
-        }
+        toast({
+            title: "Demo Form",
+            description: "This is a placeholder form and does not send messages.",
+        });
+        // The form is for display only, no message is sent.
+        // We can reset the form if desired after submission.
+        // form.reset();
     }
 
   return (
