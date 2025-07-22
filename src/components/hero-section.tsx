@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section id="home" className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden pt-16">
       <LiquidChromeBackground />
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      <div className="absolute inset-0 bg-black/20 z-0"></div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl text-xl md:text-2xl text-foreground/80 font-minecraft"
+          className="mt-6 max-w-2xl text-xl md:text-2xl text-foreground/80 font-body"
         >
           Crafting meaningful digital experiences.
         </motion.p>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import Loader from '@/components/loader';
 
 export const metadata: Metadata = {
   title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
@@ -40,7 +41,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-minecraft antialiased bg-background text-foreground">
+      <body className="font-body antialiased bg-background text-foreground">
+        <Loader />
         {children}
         <Toaster />
       </body>
