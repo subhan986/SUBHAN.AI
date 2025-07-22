@@ -11,6 +11,7 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { useEffect, useState } from "react";
 import { GridBackground } from "@/components/grid-background";
+import { TechStackSection } from "@/components/tech-stack-section";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,6 +32,7 @@ export default function Home() {
           <div className="space-y-10 md:space-y-16">
             <AboutSection />
             <FavoritesSection />
+            <TechStackSection />
             <SkillsSection />
             <ProjectsSection />
             <ValuesSection />
