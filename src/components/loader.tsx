@@ -1,60 +1,46 @@
 "use client";
 
-import MetallicPaint, { parseLogoImage } from "./MetallicPaint";
-import { useState, useEffect, type ImageData } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Loader = () => {
-  const [imageData, setImageData] = useState<ImageData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
-    async function loadLogo() {
-      try {
-        // Embed SVG content directly as a string
-        const svgString = `
-          <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <style>
-              .minecraft-font { font-family: 'Press Start 2P', cursive; }
-            </style>
-            <rect width="500" height="500" fill="black"/>
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="minecraft-font">
-              <tspan x="50%" dy="-0.1em" font-size="120" fill="white" fill-opacity="0.75">M</tspan>
-              <tspan x="50%" dy="0.9em" font-size="120" fill="white">S</tspan>
-            </text>
-          </svg>
-        `;
-        const blob = new Blob([svgString], { type: 'image/svg+xml' });
-        const file = new File([blob], "ms-logo.svg", { type: "image/svg+xml" });
-
-        const parsedData = await parseLogoImage(file);
-        if (parsedData) {
-          setImageData(parsedData.imageData);
-        }
-      } catch (err) {
-        console.error("Error loading default image:", err);
-      }
-    }
-
-    loadLogo();
-  }, []);
-
-  useEffect(() => {
+    setIsMounted(true);
     const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000); // Hide after 4 seconds
+      setShow(false);
+    }, 2800); // Duration of the loader
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (!loading) {
+  if (!isMounted) {
     return null;
   }
-  
+
   return (
-    <div style={{ width: '100%', height: '100vh', position: 'fixed', zIndex: 9999, backgroundColor: '#0A0A0A' }}>
-      {imageData && <MetallicPaint imageData={imageData} />}
-    </div>
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: show ? 1 : 0 }}
+      transition={{ duration: 0.5, delay: show ? 0 : 2.5 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-background pointer-events-none"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1, 1, 0.8] }}
+        transition={{
+          duration: 2.5,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.8, 1],
+        }}
+        className="text-6xl font-bold text-primary font-minecraft"
+      >
+        <span className="opacity-75">M</span>S
+      </motion.div>
+    </motion.div>
   );
-}
+};
 
 export default Loader;
