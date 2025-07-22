@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export function AboutSection() {
-  const profileImageUrl = "https://media.licdn.com/dms/image/v2/D5635AQHMYApcCGJFFw/profile-framedphoto-shrink_400_400/B56Zgxkp2RHQAk-/0/1753178349257?e=1753783200&v=beta&t=kx_Neyz8BexXSabgMBd2lnGuOwBJ8nTZy3_CThPXzeU";
+  const profileImageUrl = "https://placehold.co/400x400.png";
 
   return (
     <section id="about" className="py-10 lg:py-16">
@@ -20,10 +20,10 @@ export function AboutSection() {
              <div className="relative md:hidden w-full h-80 rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                 <Image
                     src={profileImageUrl}
-                    alt="Muhammad Subhan"
+                    alt="Jotaro Kujo"
                     fill
                     className="object-cover rounded-lg"
-                    data-ai-hint="person portrait"
+                    data-ai-hint="Jotaro Kujo"
                 />
             </div>
           </div>
@@ -31,10 +31,10 @@ export function AboutSection() {
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg shadow-primary/10">
                <Image
                   src={profileImageUrl}
-                  alt="Muhammad Subhan"
+                  alt="Jotaro Kujo"
                   fill
                   className="object-cover rounded-lg"
-                  data-ai-hint="person portrait"
+                  data-ai-hint="Jotaro Kujo"
                 />
             </div>
           </div>
