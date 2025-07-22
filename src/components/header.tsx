@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import type React from "react";
 
 export function Header() {
   const navItems = [
@@ -13,6 +14,39 @@ export function Header() {
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace(/.*#/, "");
+    const elem = document.getElementById(targetId);
+    
+    if (elem) {
+      const elementPosition = elem.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - 80; // Adjusted for header height
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  const NavLinks = ({ mobile = false }: { mobile?: boolean }) => (
+    <>
+      {navItems.map((item) => (
+        <a
+          key={item.name}
+          href={item.href}
+          onClick={(e) => handleScroll(e, item.href)}
+          className={mobile 
+            ? "text-lg font-medium text-foreground hover:text-primary transition-colors" 
+            : "text-sm font-medium text-foreground/80 hover:text-primary transition-colors"}
+        >
+          {item.name}
+        </a>
+      ))}
+    </>
+  );
 
   return (
     <motion.header
@@ -26,15 +60,7 @@ export function Header() {
           <span className="opacity-75">M</span>S
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
+          <NavLinks />
         </nav>
         <div className="md:hidden">
             <Sheet>
@@ -45,15 +71,7 @@ export function Header() {
                 </SheetTrigger>
                 <SheetContent side="right">
                     <div className="flex flex-col space-y-4 p-4">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
+                      <NavLinks mobile />
                     </div>
                 </SheetContent>
             </Sheet>
