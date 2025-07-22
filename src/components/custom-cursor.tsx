@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -68,7 +69,7 @@ export function CustomCursor() {
       <GlassSurface
         width="100%"
         height="100%"
-        borderRadius={30}
+        borderRadius={cursorSize / 2}
         blur={5}
         displace={10}
         opacity={0.1}
