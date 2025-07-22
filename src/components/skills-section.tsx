@@ -1,7 +1,7 @@
 
 "use client";
 import { motion } from "framer-motion";
-import { Code2, BrainCircuit, PenTool, GraduationCap, Dna, Rocket } from "lucide-react";
+import { Code2, BrainCircuit, Paintbrush, Lightbulb, FlaskConical, Swords } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ShinyCard } from "./shiny-card";
 
@@ -17,22 +17,22 @@ const skills = [
     description: "Experience with OpenAI & Gemini APIs to build prompt-based tools and intelligent systems.",
   },
   {
-    icon: <PenTool className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <Paintbrush className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Product Design + Front-End",
     description: "Crafting beautiful UIs with Tailwind CSS and creating fluid user experiences with animations.",
   },
   {
-    icon: <GraduationCap className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <Lightbulb className="w-10 h-10 text-primary pulsing-icon" />,
     title: "EdTech Projects",
     description: "Building educational tools like StudySync AI to help students learn more effectively.",
   },
   {
-    icon: <Dna className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <FlaskConical className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Bio x AI Projects",
     description: "Exploring synthetic gene circuits, 3D visualizations, and real-time AI in biology.",
   },
   {
-    icon: <Rocket className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <Swords className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Hackathon & MVP Builds",
     description: "Rapidly prototyping ideas, like a 3D gravity simulator, for hackathons and MVPs.",
   },

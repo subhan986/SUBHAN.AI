@@ -1,13 +1,14 @@
+
 "use client";
 import { motion } from "framer-motion";
-import { Tv, BookOpen, Music, Code2, Palette } from "lucide-react";
+import { Gamepad2, BookOpen, Headphones, Keyboard, PencilRuler } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ShinyCard } from "./shiny-card";
 
 const favorites = [
   {
-    icon: <Tv className="w-10 h-10 text-primary pulsing-icon" />,
-    title: "Anime",
+    icon: <Gamepad2 className="w-10 h-10 text-primary pulsing-icon" />,
+    title: "Gaming",
     description: "Jojo's Bizarre Adventure & Death Note are my top picks.",
   },
   {
@@ -16,17 +17,17 @@ const favorites = [
     description: "Always looking for a good story to dive into.",
   },
   {
-    icon: <Music className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <Headphones className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Music",
     description: "Exploring different genres and finding new artists.",
   },
   {
-    icon: <Code2 className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <Keyboard className="w-10 h-10 text-primary pulsing-icon" />,
     title: "Web Development",
     description: "Building and creating things for the web.",
   },
   {
-    icon: <Palette className="w-10 h-10 text-primary pulsing-icon" />,
+    icon: <PencilRuler className="w-10 h-10 text-primary pulsing-icon" />,
     title: "UI Design",
     description: "Passionate about creating beautiful and intuitive interfaces.",
   },

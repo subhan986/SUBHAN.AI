@@ -1,21 +1,22 @@
+
 "use client";
 import { motion } from "framer-motion";
-import { Users, Blend, BookOpen } from "lucide-react";
+import { Globe, Sparkles, Share2 } from "lucide-react";
 import { ShinyCard } from "./shiny-card";
 
 const values = [
   {
-    icon: <Users className="w-8 h-8 text-primary" />,
+    icon: <Globe className="w-8 h-8 text-primary" />,
     title: "Access for All",
     description: "Building technology that is inclusive and accessible to everyone.",
   },
   {
-    icon: <Blend className="w-8 h-8 text-primary" />,
+    icon: <Sparkles className="w-8 h-8 text-primary" />,
     title: "Design × Function",
     description: "Creating products that are not only functional but also beautiful and delightful to use.",
   },
   {
-    icon: <BookOpen className="w-8 h-8 text-primary" />,
+    icon: <Share2 className="w-8 h-8 text-primary" />,
     title: "Learn in Public",
     description: "Sharing my journey, learnings, and projects openly to grow with the community.",
   },
