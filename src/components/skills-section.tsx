@@ -60,7 +60,7 @@ export function SkillsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">What I Do</h2>
-          <p className="mt-2 text-lg text-foreground/80 font-headline">This is my Stand power.</p>
+          <p className="mt-2 text-lg text-foreground/80 font-body">This is my Stand power.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
@@ -78,7 +78,7 @@ export function SkillsSection() {
                     {skill.icon}
                     <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="text-center text-foreground/80 font-headline">
+                  <CardContent className="text-center text-foreground/80 font-body">
                     <p>{skill.description}</p>
                   </CardContent>
                 </Card>

@@ -55,7 +55,7 @@ export function FavoritesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">Favorites</h2>
-          <p className="mt-2 text-lg text-foreground/80 font-headline">A few of the things I enjoy.</p>
+          <p className="mt-2 text-lg text-foreground/80 font-body">A few of the things I enjoy.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {favorites.map((fav, index) => (
@@ -73,7 +73,7 @@ export function FavoritesSection() {
                     {fav.icon}
                     <CardTitle className="mt-4 font-headline text-lg">{fav.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="text-center text-foreground/80 font-headline text-sm">
+                  <CardContent className="text-center text-foreground/80 font-body text-sm">
                     <p>{fav.description}</p>
                   </CardContent>
                 </Card>

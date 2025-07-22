@@ -87,7 +87,7 @@ export function ProjectsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold font-headline text-primary">Featured Projects</h2>
-          <p className="mt-2 text-lg text-foreground/80 font-headline">My work has no weaknesses.</p>
+          <p className="mt-2 text-lg text-foreground/80 font-body">My work has no weaknesses.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -115,12 +115,12 @@ export function ProjectsSection() {
                     <CardTitle className="font-headline">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col">
-                    <p className="text-foreground/80 mb-4 flex-grow font-headline">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4 font-headline">
+                    <p className="text-foreground/80 mb-4 flex-grow font-body">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                     </div>
                   </CardContent>
-                  <CardFooter className="flex items-center space-x-4 mt-auto pt-4 border-t border-border font-headline">
+                  <CardFooter className="flex items-center space-x-4 mt-auto pt-4 border-t border-border font-body">
                     <Button variant="outline" asChild>
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <LinkIcon className="mr-2 h-4 w-4" /> Live Demo

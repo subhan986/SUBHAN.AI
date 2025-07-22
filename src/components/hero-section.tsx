@@ -35,7 +35,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-8 flex gap-4 font-headline"
+          className="mt-8 flex gap-4 font-body"
         >
           <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}>
             <Button asChild size="lg" className="rounded-full transition-all duration-300 shadow-[0_0_0_0_hsl(var(--primary))] hover:shadow-[0_0_20px_0px_hsl(var(--primary)/0.5)]">
