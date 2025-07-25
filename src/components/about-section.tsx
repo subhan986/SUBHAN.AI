@@ -19,14 +19,16 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full mt-8">
-                <Image
-                    src="/unanmed.jpg"
-                    alt="A portrait of Muhammad Subhan"
-                    width={400}
-                    height={400}
-                    className="object-contain rounded-lg mx-auto"
-                    quality={100}
-                />
+                <ShinyCard className="rounded-lg">
+                    <Image
+                        src="/unanmed.jpg"
+                        alt="A portrait of Muhammad Subhan"
+                        width={400}
+                        height={400}
+                        className="object-contain rounded-lg mx-auto"
+                        quality={100}
+                    />
+                </ShinyCard>
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
