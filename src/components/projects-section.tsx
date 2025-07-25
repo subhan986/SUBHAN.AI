@@ -2,9 +2,11 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShinyCard } from "./shiny-card";
+import { Button } from "./ui/button";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -27,6 +29,7 @@ const projects = [
     image: "/Gravitysimulator.png",
     imageHint: "galaxy space",
     tags: ["JavaScript", "Physics", "3D"],
+    link: "https://spacetime-theta.vercel.app",
   },
   {
     title: "AI-Powered Code Assistant",
@@ -106,6 +109,16 @@ export function ProjectsSection() {
                       {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                     </div>
                   </CardContent>
+                  {project.link && (
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                          Live Demo
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                    </CardFooter>
+                  )}
                 </Card>
               </ShinyCard>
             </motion.div>
