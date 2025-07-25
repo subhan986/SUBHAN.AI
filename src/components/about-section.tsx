@@ -18,24 +18,26 @@ export function AboutSection() {
                 From crafting intelligent systems with Large Language Models to designing futuristic UIs, I'm driven by a desire to explore uncharted territories. Whether it's a deep dive into Bio-AI or rapidly prototyping an idea at a hackathon, I'm constantly seeking new challenges that push the boundaries of what's possible. My goal is simple: to build tools that are not only powerful but also intuitive and empowering for everyone, especially students.
               </p>
             </div>
-             <div className="relative md:hidden w-full h-80">
+             <div className="relative md:hidden w-full mt-8">
                 <Image
                     src="/unnamed.jpg"
                     alt="A portrait of Muhammad Subhan"
-                    fill
-                    className="object-contain rounded-lg"
+                    width={400}
+                    height={400}
+                    className="object-contain rounded-lg mx-auto"
                     quality={100}
                 />
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
             <ShinyCard className="rounded-lg">
-                <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                <div className="relative w-full h-auto rounded-lg overflow-hidden">
                      <Image
                         src="/unnamed.jpg"
                         alt="A portrait of Muhammad Subhan"
-                        fill
-                        className="object-contain"
+                        width={500}
+                        height={500}
+                        className="object-contain rounded-lg"
                         quality={100}
                       />
                 </div>
