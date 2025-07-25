@@ -1,7 +1,23 @@
 
+"use client";
 import Image from 'next/image';
 import { LiquidChromeBackground } from './liquid-chrome-background';
 import { ShinyCard } from './shiny-card';
+import { motion } from 'framer-motion';
+
+const PlayerTag = () => {
+  return (
+    <motion.div 
+      className="absolute left-1/2 -translate-x-1/2 top-[20%] z-20"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    >
+      <div className="bg-black/50 text-white font-minecraft text-xs px-2 py-1 rounded-sm shadow-lg">
+        Subhan
+      </div>
+    </motion.div>
+  );
+};
 
 export function AboutSection() {
   return (
@@ -19,6 +35,7 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full h-80">
+                <PlayerTag />
                 <LiquidChromeBackground />
                 <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover rounded-lg -z-10">
                   <source src="/about-video.mp4" type="video/mp4" />
@@ -26,7 +43,7 @@ export function AboutSection() {
                 </video>
                 <div className="absolute inset-0 bg-black/30 backdrop-blur-sm -z-10"></div>
                 <Image
-                    src="/Adobe Express - file.png?v=2"
+                    src="/unnamed.jpg"
                     alt="A portrait of Muhammad Subhan"
                     fill
                     className="object-contain"
@@ -38,6 +55,7 @@ export function AboutSection() {
           <div className="hidden md:block md:col-span-2">
             <ShinyCard className="rounded-lg">
                 <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                     <PlayerTag />
                      <LiquidChromeBackground />
                      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover -z-10">
                         <source src="/about-video.mp4" type="video/mp4" />
@@ -45,7 +63,7 @@ export function AboutSection() {
                      </video>
                      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm -z-10"></div>
                      <Image
-                        src="/Adobe Express - file.png?v=2"
+                        src="/unnamed.jpg"
                         alt="A portrait of Muhammad Subhan"
                         fill
                         className="object-contain"
