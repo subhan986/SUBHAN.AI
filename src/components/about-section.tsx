@@ -20,7 +20,7 @@ export function AboutSection() {
             </div>
              <div className="relative md:hidden w-full mt-8">
                 <Image
-                    src="/unnamed.jpg"
+                    src="/unanmed.jpg"
                     alt="A portrait of Muhammad Subhan"
                     width={400}
                     height={400}
@@ -33,7 +33,7 @@ export function AboutSection() {
             <ShinyCard className="rounded-lg">
                 <div className="relative w-full h-auto rounded-lg overflow-hidden">
                      <Image
-                        src="/unnamed.jpg"
+                        src="/unanmed.jpg"
                         alt="A portrait of Muhammad Subhan"
                         width={500}
                         height={500}
