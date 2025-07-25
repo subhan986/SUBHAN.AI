@@ -37,7 +37,7 @@ export function AboutSection() {
              <div className="relative md:hidden w-full h-80">
                 <PlayerTag />
                 <LiquidChromeBackground />
-                <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover rounded-lg -z-10">
+                <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover rounded-lg -z-20">
                   <source src="/about-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
@@ -46,10 +46,10 @@ export function AboutSection() {
                     src="/unnamed.jpg"
                     alt="A portrait of Muhammad Subhan"
                     fill
-                    className="object-contain"
+                    className="object-contain z-10"
                     quality={100}
                 />
-                <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
+                <div className="absolute inset-0 bg-black/20 rounded-lg -z-10"></div>
             </div>
           </div>
           <div className="hidden md:block md:col-span-2">
@@ -57,7 +57,7 @@ export function AboutSection() {
                 <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
                      <PlayerTag />
                      <LiquidChromeBackground />
-                     <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover -z-10">
+                     <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover -z-20">
                         <source src="/about-video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                      </video>
@@ -66,10 +66,10 @@ export function AboutSection() {
                         src="/unnamed.jpg"
                         alt="A portrait of Muhammad Subhan"
                         fill
-                        className="object-contain"
+                        className="object-contain z-10"
                         quality={100}
                       />
-                      <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
+                      <div className="absolute inset-0 bg-black/20 rounded-lg -z-10"></div>
                 </div>
             </ShinyCard>
           </div>
