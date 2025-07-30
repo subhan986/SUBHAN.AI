@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Tv, BookOpen, Headphones, Keyboard, PencilRuler } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { ShinyCard } from "./shiny-card";
+import { CometCard } from "./ui/comet-card";
 
 const favorites = [
   {
@@ -66,7 +66,7 @@ export function FavoritesSection() {
               viewport={{ once: true, amount: 0.5 }}
               variants={cardVariants}
             >
-              <ShinyCard className="h-full">
+              <CometCard className="h-full">
                 <Card className="h-full bg-card/50 border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 relative overflow-hidden">
                    <div className="animated-gradient absolute inset-0 -z-10"></div>
                   <CardHeader className="flex flex-col items-center text-center">
@@ -77,7 +77,7 @@ export function FavoritesSection() {
                     <p>{fav.description}</p>
                   </CardContent>
                 </Card>
-              </ShinyCard>
+              </CometCard>
             </motion.div>
           ))}
         </div>
