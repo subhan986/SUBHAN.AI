@@ -2,8 +2,20 @@
 "use client";
 import Image from 'next/image';
 import { ShinyCard } from './shiny-card';
+import { useState } from 'react';
 
 export function AboutSection() {
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleImageClick = () => {
+    const newClickCount = clickCount + 1;
+    setClickCount(newClickCount);
+    if (newClickCount === 5) {
+      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+      setClickCount(0); // Reset counter
+    }
+  };
+
   return (
     <section id="about" className="py-10 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +29,11 @@ export function AboutSection() {
               <p>
                 From crafting intelligent systems with Large Language Models to designing futuristic UIs, I'm driven by a desire to explore uncharted territories. Whether it's a deep dive into Bio-AI or rapidly prototyping an idea at a hackathon, I'm constantly seeking new challenges that push the boundaries of what's possible. My goal is simple: to build tools that are not only powerful but also intuitive and empowering for everyone, especially students.
               </p>
+              <p className="italic text-foreground/60 text-sm">
+                P.S. Some say this portrait holds a secret if you're curious enough to click.
+              </p>
             </div>
-             <div className="relative md:hidden w-full mt-8">
+             <div className="relative md:hidden w-full mt-8" onClick={handleImageClick}>
                 <ShinyCard className="rounded-lg">
                     <Image
                         src="/unanmed.jpg"
@@ -31,7 +46,7 @@ export function AboutSection() {
                 </ShinyCard>
             </div>
           </div>
-          <div className="hidden md:block md:col-span-2">
+          <div className="hidden md:block md:col-span-2" onClick={handleImageClick}>
             <ShinyCard className="rounded-lg">
                 <div className="relative w-full h-auto rounded-lg overflow-hidden">
                      <Image
