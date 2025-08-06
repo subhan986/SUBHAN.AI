@@ -45,6 +45,7 @@ export function Header() {
         title: "...",
         description: "So it's the same type of stand as Star Platinum.",
       });
+      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
       setClickCount(0); // Reset counter
     }
   };
