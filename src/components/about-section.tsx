@@ -30,7 +30,7 @@ export function AboutSection() {
                 From crafting intelligent systems with Large Language Models to designing futuristic UIs, I'm driven by a desire to explore uncharted territories. Whether it's a deep dive into Bio-AI or rapidly prototyping an idea at a hackathon, I'm constantly seeking new challenges that push the boundaries of what's possible. My goal is simple: to build tools that are not only powerful but also intuitive and empowering for everyone, especially students.
               </p>
               <p className="italic text-foreground/60 text-sm">
-                P.S. Some say this portrait holds a secret if you're curious enough to click.
+                P.S. Some say this portrait holds a secret if you click it 5 times.
               </p>
             </div>
              <div className="relative md:hidden w-full mt-8" onClick={handleImageClick}>
