@@ -7,10 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 export function Header() {
-  const { toast } = useToast();
   const [clickCount, setClickCount] = useState(0);
 
   const navItems = [
@@ -41,10 +39,6 @@ export function Header() {
     const newClickCount = clickCount + 1;
     setClickCount(newClickCount);
     if (newClickCount === 5) {
-      toast({
-        title: "...",
-        description: "So it's the same type of stand as Star Platinum.",
-      });
       window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
       setClickCount(0); // Reset counter
     }
