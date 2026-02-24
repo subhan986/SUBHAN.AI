@@ -8,10 +8,16 @@ import { Menu } from "lucide-react";
 import type React from "react";
 
 export function Header() {
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   
-  // Smooth scroll progress
+  // Smooth spring physics for scroll interactions
   const scrollSpring = useSpring(scrollY, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const progressSpring = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
@@ -20,13 +26,14 @@ export function Header() {
   // Dynamic values based on scroll
   const headerPadding = useTransform(scrollSpring, [0, 100], ["2rem", "1.5rem"]);
   const headerHeight = useTransform(scrollSpring, [0, 100], ["4rem", "3.5rem"]);
-  const headerScale = useTransform(scrollSpring, [0, 100], [1, 0.95]);
-  const headerOpacity = useTransform(scrollSpring, [0, 100], [0.4, 0.8]);
+  const headerScale = useTransform(scrollSpring, [0, 100], [1, 0.92]);
+  const headerOpacity = useTransform(scrollSpring, [0, 100], [0.4, 0.85]);
   const headerBlur = useTransform(scrollSpring, [0, 100], [12, 24]);
+  const headerY = useTransform(scrollSpring, [0, 100], [0, 10]);
 
   const navItems = [
     { name: "About", href: "#about" },
-    { name: "Favorites", href: "#favorites" },
+    { name: "Bento", href: "#bento" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
@@ -77,14 +84,22 @@ export function Header() {
           paddingRight: headerPadding,
           height: headerHeight,
           scale: headerScale,
-          backgroundColor: `rgba(13, 1, 20, ${headerOpacity.get()})`, // Approximating background with opacity
+          y: headerY,
+          backgroundColor: `rgba(13, 1, 20, ${headerOpacity.get()})`,
           backdropFilter: `blur(${headerBlur.get()}px)`,
         }}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
+        whileHover={{ scale: 0.98 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 260, damping: 20 }}
-        className="pointer-events-auto flex items-center gap-6 md:gap-8 border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] font-body"
+        className="pointer-events-auto flex items-center gap-6 md:gap-8 border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] font-body overflow-hidden relative"
       >
+        {/* Scroll Progress Bar inside the dock */}
+        <motion.div 
+          className="absolute top-0 left-0 h-[2px] bg-primary z-[-1]"
+          style={{ width: useTransform(progressSpring, [0, 1], ["0%", "100%"]) }}
+        />
+
         <Link href="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors font-minecraft shrink-0">
           <span className="opacity-75">M</span>S
         </Link>
