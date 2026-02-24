@@ -1,13 +1,28 @@
 
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import type React from "react";
 
 export function Header() {
+  const { scrollY } = useScroll();
+  
+  // Smooth scroll progress
+  const scrollSpring = useSpring(scrollY, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Dynamic values based on scroll
+  const headerPadding = useTransform(scrollSpring, [0, 100], ["2rem", "1.5rem"]);
+  const headerHeight = useTransform(scrollSpring, [0, 100], ["4rem", "3.5rem"]);
+  const headerScale = useTransform(scrollSpring, [0, 100], [1, 0.95]);
+  const headerOpacity = useTransform(scrollSpring, [0, 100], [0.4, 0.8]);
+  const headerBlur = useTransform(scrollSpring, [0, 100], [12, 24]);
 
   const navItems = [
     { name: "About", href: "#about" },
@@ -23,8 +38,9 @@ export function Header() {
     const elem = document.getElementById(targetId);
     
     if (elem) {
+      const offset = 100;
       const elementPosition = elem.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - 100; // Adjusted for dock height and floating offset
+      const offsetPosition = elementPosition + window.scrollY - offset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -56,10 +72,18 @@ export function Header() {
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none">
       <motion.header
+        style={{
+          paddingLeft: headerPadding,
+          paddingRight: headerPadding,
+          height: headerHeight,
+          scale: headerScale,
+          backgroundColor: `rgba(13, 1, 20, ${headerOpacity.get()})`, // Approximating background with opacity
+          backdropFilter: `blur(${headerBlur.get()}px)`,
+        }}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 260, damping: 20 }}
-        className="pointer-events-auto h-14 px-4 md:px-8 flex items-center gap-6 bg-background/60 backdrop-blur-xl border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] font-body"
+        className="pointer-events-auto flex items-center gap-6 md:gap-8 border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] font-body"
       >
         <Link href="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors font-minecraft shrink-0">
           <span className="opacity-75">M</span>S
