@@ -4,7 +4,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShinyCard } from "./shiny-card";
-import { BrainCircuit, Globe, Laptop, Rocket, Zap, Heart, Code, Sparkles, Coffee, Timer } from "lucide-react";
+import { 
+  BrainCircuit, 
+  Globe, 
+  Laptop, 
+  Rocket, 
+  Zap, 
+  Code, 
+  Sparkles, 
+  Coffee, 
+  Timer, 
+  Book, 
+  Gamepad2, 
+  Cpu,
+  Target,
+  MessageCircle
+} from "lucide-react";
 import { Badge } from "./ui/badge";
 
 export function BentoSection() {
@@ -25,7 +40,10 @@ export function BentoSection() {
             className="md:col-span-2 md:row-span-2"
           >
             <ShinyCard className="h-full">
-              <div className="h-full p-8 bg-card/40 border border-white/10 rounded-2xl flex flex-col justify-between">
+              <div className="h-full p-8 bg-card/40 border border-white/10 rounded-2xl flex flex-col justify-between relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                   <Cpu className="w-32 h-32" />
+                </div>
                 <Rocket className="w-12 h-12 text-primary pulsing-icon mb-4" />
                 <div>
                   <h3 className="text-2xl font-bold font-headline mb-4">The Golden Mission</h3>
@@ -75,7 +93,7 @@ export function BentoSection() {
             </ShinyCard>
           </motion.div>
 
-          {/* Status Card */}
+          {/* Goals Card */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -84,10 +102,12 @@ export function BentoSection() {
             className="md:col-span-1 md:row-span-1"
           >
             <ShinyCard className="h-full">
-              <div className="h-full p-6 bg-card/40 border border-white/10 rounded-2xl flex flex-col items-center justify-center text-center">
-                <Zap className="w-8 h-8 text-yellow-500 mb-2" />
-                <h4 className="font-headline text-[10px] mb-1 opacity-50 uppercase tracking-tighter">Building Status</h4>
-                <p className="font-body text-foreground/70 text-sm">Active 24/7</p>
+              <div className="h-full p-6 bg-card/40 border border-white/10 rounded-2xl flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-2">
+                  <Target className="w-5 h-5 text-red-500" />
+                  <h4 className="font-headline text-[8px] uppercase">Roadmap 2025</h4>
+                </div>
+                <p className="font-body text-[10px] text-foreground/70">Democratizing AI for education through intuitive SaaS platforms.</p>
               </div>
             </ShinyCard>
           </motion.div>
@@ -132,12 +152,35 @@ export function BentoSection() {
             </ShinyCard>
           </motion.div>
 
-          {/* Coffee box */}
+          {/* Habits Box */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
+            className="md:col-span-1 md:row-span-1"
+          >
+            <ShinyCard className="h-full">
+              <div className="h-full p-6 bg-card/40 border border-white/10 rounded-2xl flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-2">
+                  <Gamepad2 className="w-4 h-4 text-orange-500" />
+                  <h4 className="font-headline text-[8px] uppercase">Interests</h4>
+                </div>
+                <ul className="text-[9px] font-body text-foreground/60 space-y-0.5">
+                  <li>• UI/UX Motion Design</li>
+                  <li>• Reading Philosphy</li>
+                  <li>• Anime & Narrative Art</li>
+                </ul>
+              </div>
+            </ShinyCard>
+          </motion.div>
+
+          {/* Coffee box */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7 }}
             className="md:col-span-1 md:row-span-1"
           >
             <ShinyCard className="h-full">
@@ -149,19 +192,41 @@ export function BentoSection() {
             </ShinyCard>
           </motion.div>
 
+          {/* Community Involvement */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+            className="md:col-span-1 md:row-span-1"
+          >
+            <ShinyCard className="h-full">
+              <div className="h-full p-6 bg-card/40 border border-white/10 rounded-2xl flex flex-col items-center justify-center text-center">
+                <MessageCircle className="w-8 h-8 text-blue-400 mb-2" />
+                <h4 className="font-headline text-[8px] uppercase mb-1">Community</h4>
+                <p className="font-body text-[10px] text-foreground/70">Learning & Building in public.</p>
+              </div>
+            </ShinyCard>
+          </motion.div>
+
           {/* Current Focus - EdTech */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.7 }}
-            className="md:col-span-1 md:row-span-1"
+            transition={{ delay: 0.9 }}
+            className="md:col-span-2 md:row-span-1"
           >
             <ShinyCard className="h-full">
               <div className="h-full p-6 bg-card/40 border border-white/10 rounded-2xl flex flex-col justify-center">
-                <BrainCircuit className="w-6 h-6 text-purple-500 mb-2" />
-                <h4 className="font-headline text-[8px] uppercase mb-1">Current Focus</h4>
-                <p className="font-body text-xs text-foreground/80 leading-tight">Bio-AI & Synthetic Biology Interfaces</p>
+                <div className="flex items-center gap-3 mb-2">
+                  <BrainCircuit className="w-8 h-8 text-purple-500" />
+                  <div>
+                    <h4 className="font-headline text-[8px] uppercase">Current Research</h4>
+                    <p className="font-body text-sm text-foreground/90">Bio-AI & Synthetic Biology Interfaces</p>
+                  </div>
+                </div>
+                <p className="font-body text-xs text-foreground/60 leading-tight">Exploring how generative AI can accelerate the design of synthetic gene circuits and biological simulations.</p>
               </div>
             </ShinyCard>
           </motion.div>
@@ -171,35 +236,39 @@ export function BentoSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 1.0 }}
             className="md:col-span-1 md:row-span-1"
           >
             <ShinyCard className="h-full">
               <div className="h-full p-6 bg-card/40 border border-white/10 rounded-2xl flex flex-col items-center justify-center text-center">
                 <Code className="w-8 h-8 text-blue-500 mb-2" />
-                <p className="font-body text-xs text-foreground/70">Writing the scripture of the future.</p>
+                <p className="font-body text-[10px] text-foreground/70 leading-tight">Writing the scriptures of the future, one line at a time.</p>
               </div>
             </ShinyCard>
           </motion.div>
 
-          {/* Personality Card - Wide Banner */}
+          {/* Philosophy/Status Card - Wide Banner */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.9 }}
+            transition={{ delay: 1.1 }}
             className="md:col-span-4 md:row-span-1"
           >
             <ShinyCard className="h-full">
-              <div className="h-full p-6 bg-primary/5 border border-primary/20 rounded-2xl flex items-center justify-between gap-6">
-                <div className="flex items-center gap-4">
-                  <Sparkles className="w-10 h-10 text-primary pulsing-icon" />
-                  <p className="font-body text-base md:text-lg text-foreground/90 max-w-2xl">
+              <div className="h-full p-6 bg-primary/5 border border-primary/20 rounded-2xl flex items-center justify-between gap-6 relative overflow-hidden">
+                <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-10 opacity-5 pointer-events-none">
+                  <Sparkles className="w-40 h-40 text-primary" />
+                </div>
+                <div className="flex items-center gap-4 relative z-10">
+                  <Sparkles className="w-10 h-10 text-primary pulsing-icon shrink-0" />
+                  <p className="font-body text-base md:text-lg text-foreground/90 max-w-2xl leading-relaxed">
                     "I believe that code is the modern ink, and we are writing the scriptures of the future. Every line is a heartbeat of a new reality."
                   </p>
                 </div>
-                <div className="hidden md:block">
+                <div className="hidden lg:flex flex-col items-end gap-1 shrink-0">
                   <Badge variant="secondary" className="font-minecraft text-[10px] animate-pulse bg-primary text-primary-foreground">SYSTEM CORE: NOMINAL</Badge>
+                  <span className="text-[8px] font-mono text-foreground/30">ID: SUBHAN_0.1.5_REV_2024</span>
                 </div>
               </div>
             </ShinyCard>
