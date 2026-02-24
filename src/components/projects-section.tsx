@@ -17,6 +17,14 @@ const projects = [
     tags: ["Next.js", "AI", "Firebase", "EdTech"],
   },
   {
+    title: "Quantum Labs",
+    description: "A sophisticated platform for exploring quantum computing concepts and experiments. It provides interactive visualizations and simulations of quantum circuits, helping researchers and students understand the principles of superposition and entanglement.",
+    image: "https://picsum.photos/seed/quantum/600/400",
+    imageHint: "quantum physics",
+    tags: ["Next.js", "Quantum", "Scientific", "React"],
+    link: "https://atom-sepia.vercel.app/",
+  },
+  {
     title: "Bio-AI Simulation Platform",
     description: "A cutting-edge platform for visualizing and simulating synthetic gene circuits in real-time 3D. This tool leverages AI to predict and display complex biological interactions, offering researchers an intuitive way to explore genetic engineering concepts.",
     image: "/bioai.png",
