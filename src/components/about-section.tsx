@@ -33,27 +33,27 @@ export function AboutSection() {
                 P.S. Some say this portrait holds a secret if you click it 5 times.
               </p>
             </div>
-             <div className="relative md:hidden w-full mt-8" onClick={handleImageClick}>
-                <ShinyCard className="rounded-lg">
+             <div className="relative md:hidden w-full mt-8 flex justify-center" onClick={handleImageClick}>
+                <ShinyCard className="rounded-lg w-fit">
                     <Image
                         src="/j.png"
                         alt="A portrait of Muhammad Subhan"
-                        width={400}
-                        height={400}
+                        width={300}
+                        height={300}
                         className="object-contain rounded-lg mx-auto"
                         quality={100}
                     />
                 </ShinyCard>
             </div>
           </div>
-          <div className="hidden md:block md:col-span-2" onClick={handleImageClick}>
-            <ShinyCard className="rounded-lg">
-                <div className="relative w-full h-auto rounded-lg overflow-hidden">
+          <div className="hidden md:flex md:col-span-2 justify-center" onClick={handleImageClick}>
+            <ShinyCard className="rounded-lg w-fit">
+                <div className="relative rounded-lg overflow-hidden">
                      <Image
                         src="/j.png"
                         alt="A portrait of Muhammad Subhan"
-                        width={500}
-                        height={500}
+                        width={400}
+                        height={400}
                         className="object-contain rounded-lg"
                         quality={100}
                       />
