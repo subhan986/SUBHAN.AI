@@ -6,26 +6,17 @@ import { motion, useSpring, useMotionValue, useVelocity, useTransform } from 'fr
 import { cn } from '@/lib/utils';
 
 const CustomCursor = () => {
-  // Use MotionValues for high-performance position tracking
+  // Position tracking
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Velocity tracking for the "stretching" effect
+  // Velocity for the subtle trailing effect
   const velX = useVelocity(mouseX);
   const velY = useVelocity(mouseY);
   
-  // Calculate movement speed for dynamic scaling
-  const velocity = useTransform([velX, velY], ([vx, vy]) => {
-    return Math.sqrt(Math.pow(Number(vx), 2) + Math.pow(Number(vy), 2));
-  });
-
-  // Dynamic scale and skew based on velocity (the "Lenis" fluid feel)
-  const stretch = useTransform(velocity, [0, 3000], [1, 1.4]);
-  const squash = useTransform(velocity, [0, 3000], [1, 0.7]);
-
-  // Spring physics for the trailing outer ring (the "liquid" part)
-  const ringX = useSpring(mouseX, { damping: 25, stiffness: 150 });
-  const ringY = useSpring(mouseY, { damping: 25, stiffness: 150 });
+  // Spring physics for the background glow
+  const ringX = useSpring(mouseX, { damping: 30, stiffness: 200 });
+  const ringY = useSpring(mouseY, { damping: 30, stiffness: 200 });
 
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
@@ -74,49 +65,43 @@ const CustomCursor = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
-      {/* Outer Liquid Ring */}
+      {/* Subtle Trailing Glow */}
       <motion.div
         className={cn(
-          "absolute top-0 left-0 w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center transition-colors duration-300",
-          isHovering && "bg-primary/10 border-primary shadow-[0_0_20px_rgba(var(--primary),0.3)]"
+          "absolute top-0 left-0 w-16 h-16 rounded-full transition-colors duration-500",
+          isHovering ? "bg-primary/10 blur-xl" : "bg-primary/5 blur-2xl"
         )}
         style={{
           x: ringX,
           y: ringY,
           translateX: "-50%",
           translateY: "-50%",
-          scaleX: stretch,
-          scaleY: squash,
         }}
         animate={{
-          scale: isClicking ? 0.7 : (isHovering ? 1.8 : 1),
-          opacity: isClicking ? 1 : 0.7,
+          scale: isClicking ? 0.5 : (isHovering ? 1.2 : 1),
+          opacity: isVisible ? 1 : 0,
         }}
-        transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-      >
-        {/* Internal glow when hovering */}
-        {isHovering && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="w-full h-full rounded-full bg-primary/20 blur-md"
-          />
-        )}
-      </motion.div>
+      />
 
-      {/* Inner Precision Dot */}
+      {/* The Glass Cursor Image */}
       <motion.div
-        className="absolute top-0 left-0 w-1.5 h-1.5 bg-white rounded-full mix-blend-difference shadow-[0_0_10px_white]"
+        className="absolute top-0 left-0 w-7 h-7"
         style={{
           x: mouseX,
           y: mouseY,
-          translateX: "-50%",
-          translateY: "-50%",
+          // Offset so the "tip" of the arrow is at the mouse coordinate
+          translateX: "-10%",
+          translateY: "-10%",
+          backgroundImage: "url('/glass-cursor.png')",
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.3))',
         }}
         animate={{
-          scale: isClicking ? 2.5 : (isHovering ? 0.4 : 1),
+          scale: isClicking ? 0.9 : (isHovering ? 1.15 : 1),
+          rotate: isHovering ? 10 : 0,
         }}
-        transition={{ type: 'spring', damping: 15, stiffness: 400 }}
+        transition={{ type: 'spring', damping: 20, stiffness: 350 }}
       />
     </div>
   );
