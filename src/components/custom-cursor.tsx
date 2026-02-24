@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion, useSpring, useMotionValue, useVelocity } from 'framer-motion';
+import { motion, useSpring, useMotionValue } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const CustomCursor = () => {
@@ -64,7 +64,7 @@ const CustomCursor = () => {
       {/* Subtle Trailing Glow */}
       <motion.div
         className={cn(
-          "absolute top-0 left-0 w-16 h-16 rounded-full transition-colors duration-500",
+          "absolute top-0 left-0 w-12 h-12 rounded-full transition-colors duration-500",
           isHovering ? "bg-primary/10 blur-xl" : "bg-primary/5 blur-2xl"
         )}
         style={{
@@ -85,37 +85,33 @@ const CustomCursor = () => {
         style={{
           x: mouseX,
           y: mouseY,
-          // Tip of the arrow
           translateX: "0%",
           translateY: "0%",
         }}
         animate={{
-          scale: isClicking ? 0.9 : (isHovering ? 1.2 : 1),
+          scale: isClicking ? 0.8 : (isHovering ? 1.1 : 0.9),
           rotate: isHovering ? 5 : 0,
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 400 }}
       >
         <div className="relative">
-          {/* Glass Morphic Shape */}
+          {/* Glass Morphic Shape - Simple Arrow Head Only */}
           <svg
-            width="20"
-            height="26"
-            viewBox="0 0 20 26"
+            width="16"
+            height="20"
+            viewBox="0 0 16 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
           >
             <path
-              d="M1 1V21.5L6.5 16.5L10.5 24.5L14.5 22.5L10.5 14.5H18.5L1 1Z"
+              d="M1 1V17L5.5 12.5H13L1 1Z"
               fill="rgba(255, 255, 255, 0.15)"
               stroke="rgba(255, 255, 255, 0.4)"
               strokeWidth="1.5"
               style={{ backdropFilter: 'blur(8px)' }}
             />
           </svg>
-          
-          {/* Subtle point glow */}
-          <div className="absolute top-0 left-0 w-1 h-1 bg-white rounded-full blur-[1px]" />
         </div>
       </motion.div>
     </div>
