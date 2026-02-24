@@ -246,33 +246,6 @@ export function BentoSection() {
               </div>
             </ShinyCard>
           </motion.div>
-
-          {/* Philosophy/Status Card - Wide Banner */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 1.1 }}
-            className="md:col-span-4 md:row-span-1"
-          >
-            <ShinyCard className="h-full">
-              <div className="h-full p-6 bg-primary/5 border border-primary/20 rounded-2xl flex items-center justify-between gap-6 relative overflow-hidden">
-                <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-10 opacity-5 pointer-events-none">
-                  <Sparkles className="w-40 h-40 text-primary" />
-                </div>
-                <div className="flex items-center gap-4 relative z-10">
-                  <Sparkles className="w-10 h-10 text-primary pulsing-icon shrink-0" />
-                  <p className="font-body text-base md:text-lg text-foreground/90 max-w-2xl leading-relaxed">
-                    "I believe that code is the modern ink, and we are writing the scriptures of the future. Every line is a heartbeat of a new reality."
-                  </p>
-                </div>
-                <div className="hidden lg:flex flex-col items-end gap-1 shrink-0">
-                  <Badge variant="secondary" className="font-minecraft text-[10px] animate-pulse bg-primary text-primary-foreground">SYSTEM CORE: NOMINAL</Badge>
-                  <span className="text-[8px] font-mono text-foreground/30">ID: SUBHAN_0.1.5_REV_2024</span>
-                </div>
-              </div>
-            </ShinyCard>
-          </motion.div>
         </div>
       </div>
     </section>
