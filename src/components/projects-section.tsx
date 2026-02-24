@@ -27,7 +27,7 @@ const projects = [
   {
     title: "Bio-AI Simulation Platform",
     description: "A cutting-edge platform for visualizing and simulating synthetic gene circuits in real-time 3D. This tool leverages AI to predict and display complex biological interactions, offering researchers an intuitive way to explore genetic engineering concepts.",
-    image: "/bioai.png",
+    image: "/images.jpg",
     imageHint: "biotechnology abstract",
     tags: ["Next.js", "3D", "AI", "Biology"],
   },
