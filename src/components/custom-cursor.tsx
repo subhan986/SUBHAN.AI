@@ -2,17 +2,30 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useSpring, useMotionValue, useVelocity, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const CustomCursor = () => {
-  // Use MotionValues for performance (avoids React re-renders on every mouse move)
+  // Use MotionValues for high-performance position tracking
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Spring physics for the trailing ring
-  const ringX = useSpring(mouseX, { damping: 30, stiffness: 200 });
-  const ringY = useSpring(mouseY, { damping: 30, stiffness: 200 });
+  // Velocity tracking for the "stretching" effect
+  const velX = useVelocity(mouseX);
+  const velY = useVelocity(mouseY);
+  
+  // Calculate movement speed for dynamic scaling
+  const velocity = useTransform([velX, velY], ([vx, vy]) => {
+    return Math.sqrt(Math.pow(Number(vx), 2) + Math.pow(Number(vy), 2));
+  });
+
+  // Dynamic scale and skew based on velocity (the "Lenis" fluid feel)
+  const stretch = useTransform(velocity, [0, 3000], [1, 1.4]);
+  const squash = useTransform(velocity, [0, 3000], [1, 0.7]);
+
+  // Spring physics for the trailing outer ring (the "liquid" part)
+  const ringX = useSpring(mouseX, { damping: 25, stiffness: 150 });
+  const ringY = useSpring(mouseY, { damping: 25, stiffness: 150 });
 
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
@@ -26,13 +39,15 @@ const CustomCursor = () => {
     };
 
     const handleMouseOver = (e: MouseEvent) => {
-      if (e.target instanceof Element && (e.target.closest('a') || e.target.closest('button'))) {
+      const target = e.target as HTMLElement;
+      if (target.closest('a') || target.closest('button') || target.getAttribute('role') === 'button') {
         setIsHovering(true);
       }
     };
 
     const handleMouseOut = (e: MouseEvent) => {
-      if (e.target instanceof Element && (e.target.closest('a') || e.target.closest('button'))) {
+      const target = e.target as HTMLElement;
+      if (target.closest('a') || target.closest('button') || target.getAttribute('role') === 'button') {
         setIsHovering(false);
       }
     };
@@ -58,36 +73,38 @@ const CustomCursor = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999]">
-      {/* Outer Trailing Ring */}
+    <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
+      {/* Outer Liquid Ring */}
       <motion.div
         className={cn(
-          "absolute top-0 left-0 w-10 h-10 rounded-full border border-primary/50 flex items-center justify-center",
-          isHovering && "bg-primary/5 border-primary shadow-[0_0_20px_rgba(var(--primary),0.2)]"
+          "absolute top-0 left-0 w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center transition-colors duration-300",
+          isHovering && "bg-primary/10 border-primary shadow-[0_0_20px_rgba(var(--primary),0.3)]"
         )}
         style={{
           x: ringX,
           y: ringY,
           translateX: "-50%",
           translateY: "-50%",
+          scaleX: stretch,
+          scaleY: squash,
         }}
         animate={{
-          scale: isClicking ? 0.8 : (isHovering ? 1.5 : 1),
-          opacity: isClicking ? 1 : 0.6,
+          scale: isClicking ? 0.7 : (isHovering ? 1.8 : 1),
+          opacity: isClicking ? 1 : 0.7,
         }}
         transition={{ type: 'spring', damping: 20, stiffness: 300 }}
       >
-        {/* Subtle internal glow on hover */}
+        {/* Internal glow when hovering */}
         {isHovering && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="w-full h-full rounded-full bg-primary/10 blur-sm"
+            className="w-full h-full rounded-full bg-primary/20 blur-md"
           />
         )}
       </motion.div>
 
-      {/* Inner Core Dot */}
+      {/* Inner Precision Dot */}
       <motion.div
         className="absolute top-0 left-0 w-1.5 h-1.5 bg-white rounded-full mix-blend-difference shadow-[0_0_10px_white]"
         style={{
@@ -97,8 +114,9 @@ const CustomCursor = () => {
           translateY: "-50%",
         }}
         animate={{
-          scale: isClicking ? 2 : (isHovering ? 0.5 : 1),
+          scale: isClicking ? 2.5 : (isHovering ? 0.4 : 1),
         }}
+        transition={{ type: 'spring', damping: 15, stiffness: 400 }}
       />
     </div>
   );
