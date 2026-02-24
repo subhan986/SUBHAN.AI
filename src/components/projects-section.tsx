@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Quantum Labs",
     description: "A sophisticated platform for exploring quantum computing concepts and experiments. It provides interactive visualizations and simulations of quantum circuits, helping researchers and students understand the principles of superposition and entanglement.",
-    image: "https://picsum.photos/seed/quantum/600/400",
+    image: "/quantum.png",
     imageHint: "quantum physics",
     tags: ["Next.js", "Quantum", "Scientific", "React"],
     link: "https://atom-sepia.vercel.app/",
