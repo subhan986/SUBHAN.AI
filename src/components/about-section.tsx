@@ -36,7 +36,7 @@ export function AboutSection() {
              <div className="relative md:hidden w-full mt-8 flex justify-center" onClick={handleImageClick}>
                 <ShinyCard className="rounded-lg w-fit overflow-hidden">
                     <Image
-                        src="/j.png"
+                        src="/r.png"
                         alt="A portrait of Muhammad Subhan"
                         width={300}
                         height={240}
@@ -50,7 +50,7 @@ export function AboutSection() {
             <ShinyCard className="rounded-lg w-fit overflow-hidden">
                 <div className="relative rounded-lg overflow-hidden">
                      <Image
-                        src="/j.png"
+                        src="/r.png"
                         alt="A portrait of Muhammad Subhan"
                         width={400}
                         height={320}
