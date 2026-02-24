@@ -34,27 +34,27 @@ export function AboutSection() {
               </p>
             </div>
              <div className="relative md:hidden w-full mt-8 flex justify-center" onClick={handleImageClick}>
-                <ShinyCard className="rounded-lg w-fit">
+                <ShinyCard className="rounded-lg w-fit overflow-hidden">
                     <Image
                         src="/j.png"
                         alt="A portrait of Muhammad Subhan"
                         width={300}
-                        height={300}
-                        className="object-contain rounded-lg mx-auto"
+                        height={240}
+                        className="object-cover object-bottom rounded-lg mx-auto"
                         quality={100}
                     />
                 </ShinyCard>
             </div>
           </div>
           <div className="hidden md:flex md:col-span-2 justify-center" onClick={handleImageClick}>
-            <ShinyCard className="rounded-lg w-fit">
+            <ShinyCard className="rounded-lg w-fit overflow-hidden">
                 <div className="relative rounded-lg overflow-hidden">
                      <Image
                         src="/j.png"
                         alt="A portrait of Muhammad Subhan"
                         width={400}
-                        height={400}
-                        className="object-contain rounded-lg"
+                        height={320}
+                        className="object-cover object-bottom rounded-lg"
                         quality={100}
                       />
                 </div>
