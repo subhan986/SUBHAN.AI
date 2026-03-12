@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,7 +16,6 @@ export function Header() {
     { name: "Bento", href: "#bento", id: "bento" },
     { name: "Skills", href: "#skills", id: "skills" },
     { name: "Projects", href: "#projects", id: "projects" },
-    { name: "Reviews", href: "#reviews", id: "reviews" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
