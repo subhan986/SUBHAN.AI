@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,6 +12,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShinyCard } from "./shiny-card";
+import { useFirestore, useCollection } from "@/firebase";
+import { collection, addDoc, query, orderBy } from "firebase/firestore";
 
 const ReviewSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -21,42 +22,25 @@ const ReviewSchema = z.object({
   rating: z.number().min(1).max(5),
 });
 
-type Review = z.infer<typeof ReviewSchema> & { id: string; date: string };
-
-const INITIAL_REVIEWS: Review[] = [
-  {
-    id: "1",
-    name: "Alex Johnson",
-    role: "Product Designer",
-    content: "Subhan's vision for UI is truly next-level. The way he blends AI functionality with clean aesthetics is impressive.",
-    rating: 5,
-    date: "2024-03-10",
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    role: "Fullstack Dev",
-    content: "Working with someone so young yet so focused is inspiring. His projects have a level of polish I rarely see.",
-    rating: 5,
-    date: "2024-03-15",
-  }
-];
+type ReviewInput = z.infer<typeof ReviewSchema>;
 
 export function ReviewsSection() {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [isClient, setIsClient] = useState(false);
+  const db = useFirestore();
 
-  useEffect(() => {
-    setIsClient(true);
-    const saved = localStorage.getItem("subhan_reviews");
-    if (saved) {
-      setReviews(JSON.parse(saved));
-    } else {
-      setReviews(INITIAL_REVIEWS);
-    }
-  }, []);
+  const reviewsQuery = useMemo(() => {
+    if (!db) return null;
+    return query(collection(db, "reviews"), orderBy("date", "desc"));
+  }, [db]);
 
-  const form = useForm<z.infer<typeof ReviewSchema>>({
+  const { data: reviews, loading } = useCollection<{ 
+    name: string; 
+    role?: string; 
+    content: string; 
+    rating: number; 
+    date: string 
+  }>(reviewsQuery);
+
+  const form = useForm<ReviewInput>({
     resolver: zodResolver(ReviewSchema),
     defaultValues: {
       name: "",
@@ -66,20 +50,18 @@ export function ReviewsSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof ReviewSchema>) {
-    const newReview: Review = {
+  async function onSubmit(values: ReviewInput) {
+    if (!db) return;
+
+    const newReview = {
       ...values,
-      id: Math.random().toString(36).substr(2, 9),
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString(),
     };
 
-    const updated = [newReview, ...reviews];
-    setReviews(updated);
-    localStorage.setItem("subhan_reviews", JSON.stringify(updated));
+    // Mutation call (async background update)
+    addDoc(collection(db, "reviews"), newReview);
     form.reset();
   }
-
-  if (!isClient) return null;
 
   return (
     <section id="reviews" className="py-10 lg:py-16">
@@ -109,7 +91,7 @@ export function ReviewsSection() {
                         <FormItem>
                           <FormLabel className="text-xs uppercase opacity-50">Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Master Chief" {...field} className="bg-white/5" />
+                            <Input placeholder="Your Name" {...field} className="bg-white/5" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -122,7 +104,7 @@ export function ReviewsSection() {
                         <FormItem>
                           <FormLabel className="text-xs uppercase opacity-50">Role / Company (Optional)</FormLabel>
                           <FormControl>
-                            <Input placeholder="SPARTAN-II" {...field} className="bg-white/5" />
+                            <Input placeholder="Developer, Designer, etc." {...field} className="bg-white/5" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -141,7 +123,7 @@ export function ReviewsSection() {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full mt-2 font-headline text-[10px]" size="lg">
+                    <Button type="submit" className="w-full mt-2 font-headline text-[10px]" size="lg" disabled={!db}>
                       Broadcast Review <Send className="ml-2 w-3 h-3" />
                     </Button>
                   </form>
@@ -153,13 +135,15 @@ export function ReviewsSection() {
           {/* Reviews List */}
           <div className="lg:col-span-2 space-y-6">
             <AnimatePresence mode="popLayout">
-              {reviews.map((review, index) => (
+              {loading ? (
+                <div className="text-center py-20 opacity-50 font-body">Loading transmissions...</div>
+              ) : reviews?.map((review, index) => (
                 <motion.div
                   key={review.id}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                 >
                   <ShinyCard>
                     <div className="p-6 bg-card/20 border border-white/5 rounded-2xl relative overflow-hidden group hover:border-primary/30 transition-colors">
@@ -181,21 +165,20 @@ export function ReviewsSection() {
                           </div>
                           <div className="flex items-center gap-1 text-[10px] text-foreground/40 font-mono">
                             <Calendar className="w-2 h-2" />
-                            {review.date}
+                            {new Date(review.date).toLocaleDateString()}
                           </div>
                         </div>
                       </div>
                       <p className="text-foreground/80 italic font-body leading-relaxed">
                         "{review.content}"
                       </p>
-                      {/* Decorative elements */}
                       <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors" />
                     </div>
                   </ShinyCard>
                 </motion.div>
               ))}
             </AnimatePresence>
-            {reviews.length === 0 && (
+            {!loading && reviews?.length === 0 && (
               <div className="text-center py-20 opacity-20">
                 <MessageSquare className="w-12 h-12 mx-auto mb-4" />
                 <p className="font-headline text-xs">No transmissions received yet.</p>

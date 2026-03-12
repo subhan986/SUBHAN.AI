@@ -1,4 +1,3 @@
-
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,6 +8,14 @@ import { Button } from "./ui/button";
 import { ExternalLink } from "lucide-react";
 
 const projects = [
+  {
+    title: "Dulcedo",
+    description: "A minimalist aesthetic-driven platform focusing on visual storytelling and high-fidelity interaction design, rethinking the digital art experience.",
+    image: "https://picsum.photos/seed/dulcedo/600/400",
+    imageHint: "aesthetic minimalist",
+    tags: ["Next.js", "Motion", "Design"],
+    link: "https://dulcedo.vercel.app/",
+  },
   {
     title: "StudySync AI",
     description: "An AI-powered learning companion designed to help students supercharge their studies. It can generate personalized quizzes, create flashcards from uploaded notes, and provide concise summaries of complex documents, transforming dense material into manageable insights.",

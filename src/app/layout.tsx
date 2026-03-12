@@ -1,16 +1,16 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Loader from '@/components/loader';
 import { LenisProvider } from '@/components/lenis-provider';
+import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
-  description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
+  description: 'Personal portfolio of Muhammad Subhan, a 16-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
   openGraph: {
     title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
-    description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
+    description: 'Personal portfolio of Muhammad Subhan, a 16-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
     url: 'https://subhan-ai.com',
     siteName: 'Subhan.AI',
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
-    description: 'Personal portfolio of Muhammad Subhan, a 15-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
+    description: 'Personal portfolio of Muhammad Subhan, a 16-year-old developer and AI builder from Faisalabad, Pakistan, crafting meaningful digital experiences.',
     images: ['https://placehold.co/1200x630.png'],
   },
   icons: {
@@ -48,9 +48,11 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <LenisProvider>
-          <Loader />
-          {children}
-          <Toaster />
+          <FirebaseClientProvider>
+            <Loader />
+            {children}
+            <Toaster />
+          </FirebaseClientProvider>
         </LenisProvider>
       </body>
     </html>
