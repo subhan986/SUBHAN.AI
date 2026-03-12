@@ -10,44 +10,72 @@ import { ExternalLink } from "lucide-react";
 const projects = [
   {
     title: "Dulcedo",
+<<<<<<< HEAD
     description: "A minimalist aesthetic-driven platform focusing on visual storytelling and high-fidelity interaction design, rethinking the digital art experience.",
     image: "https://picsum.photos/seed/dulcedo/600/400",
     imageHint: "aesthetic minimalist",
     tags: ["Next.js", "Motion", "Design"],
+=======
+    description: "A premium digital platform crafted for elegance and high performance. It features fluid animations, a minimalist glassmorphic interface, and a focus on visual storytelling.",
+    image: "/dulcedo.png",
+    imageHint: "luxury aesthetic",
+    tags: ["Next.js", "Tailwind", "Motion", "Vercel"],
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
     link: "https://dulcedo.vercel.app/",
   },
   {
     title: "StudySync AI",
+<<<<<<< HEAD
     description: "An AI-powered learning companion designed to help students supercharge their studies. It can generate personalized quizzes, create flashcards from uploaded notes, and provide concise summaries of complex documents, transforming dense material into manageable insights.",
     image: "https://picsum.photos/seed/studysync/600/400",
+=======
+    description: "An AI-powered learning companion designed to help students supercharge their studies. It can generate personalized quizzes, create flashcards from uploaded notes, and provide concise summaries of complex documents.",
+    image: "/studysync.png",
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
     imageHint: "education technology",
     tags: ["Next.js", "AI", "Firebase", "EdTech"],
   },
   {
     title: "Quantum Labs",
+<<<<<<< HEAD
     description: "A sophisticated platform for exploring quantum computing concepts and experiments. It provides interactive visualizations and simulations of quantum circuits, helping researchers and students understand the principles of superposition and entanglement.",
     image: "https://picsum.photos/seed/quantum/600/400",
+=======
+    description: "A sophisticated platform for exploring quantum computing concepts and experiments. It provides interactive visualizations and simulations of quantum circuits.",
+    image: "/quantum.png",
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
     imageHint: "quantum physics",
     tags: ["Next.js", "Quantum", "Scientific", "React"],
     link: "https://atom-sepia.vercel.app/",
   },
   {
     title: "Bio-AI Simulation Platform",
+<<<<<<< HEAD
     description: "A cutting-edge platform for visualizing and simulating synthetic gene circuits in real-time 3D. This tool leverages AI to predict and display complex biological interactions, offering researchers an intuitive way to explore genetic engineering concepts.",
     image: "https://picsum.photos/seed/bioai/600/400",
+=======
+    description: "A cutting-edge platform for visualizing and simulating synthetic gene circuits in real-time 3D. This tool leverages AI to predict and display complex biological interactions.",
+    image: "/images.jpg",
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
     imageHint: "biotechnology abstract",
     tags: ["Next.js", "3D", "AI", "Biology"],
   },
   {
     title: "3D Gravity Simulator",
+<<<<<<< HEAD
     description: "Developed during a weekend hackathon, this interactive 3D simulator models gravitational forces and orbital mechanics. Users can create celestial bodies and watch as their gravitational interactions form stable (or chaotic) solar systems.",
     image: "https://picsum.photos/seed/gravity/600/400",
+=======
+    description: "Developed during a weekend hackathon, this interactive 3D simulator models gravitational forces and orbital mechanics. Users can create celestial bodies and watch interactions.",
+    image: "/Gravitysimulator.png",
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
     imageHint: "galaxy space",
     tags: ["JavaScript", "Physics", "3D"],
     link: "https://spacetime-theta.vercel.app",
   },
   {
     title: "AI-Powered Code Assistant",
+<<<<<<< HEAD
     description: "A smart assistant integrated directly into the VS Code IDE. It goes beyond simple autocompletion by suggesting optimized code blocks, identifying potential bugs, and explaining complex algorithms, acting as a true pair programmer.",
     image: "https://picsum.photos/seed/ai-code/600/400",
     imageHint: "purple code",
@@ -67,6 +95,13 @@ const projects = [
     imageHint: "purple dashboard",
     tags: ["D3.js", "React", "DataViz", "SaaS"],
   },
+=======
+    description: "A smart assistant integrated directly into the VS Code IDE. It goes beyond simple autocompletion by suggesting optimized code blocks and identifying potential bugs.",
+    image: "/ai code assistant.png",
+    imageHint: "purple code",
+    tags: ["AI", "VS Code", "TypeScript", "Machine Learning"],
+  },
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
 ];
 
 export function ProjectsSection() {

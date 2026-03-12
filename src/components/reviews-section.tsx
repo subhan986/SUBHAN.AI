@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import { useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -189,4 +190,11 @@ export function ReviewsSection() {
       </div>
     </section>
   );
+=======
+/**
+ * This component has been deactivated to remove the Reviews feature.
+ */
+export function ReviewsSection() {
+  return null;
+>>>>>>> 56ba6da (remove firebase backend completely remove reviews)
 }
