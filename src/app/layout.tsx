@@ -3,7 +3,6 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Loader from '@/components/loader';
 import { LenisProvider } from '@/components/lenis-provider';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: 'Subhan.AI | Developer ✦ AI Builder ✦ Visual Thinker',
@@ -48,11 +47,9 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <LenisProvider>
-          <FirebaseClientProvider>
-            <Loader />
-            {children}
-            <Toaster />
-          </FirebaseClientProvider>
+          <Loader />
+          {children}
+          <Toaster />
         </LenisProvider>
       </body>
     </html>
