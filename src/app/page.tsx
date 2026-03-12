@@ -10,6 +10,7 @@ import { SkillsSection } from "@/components/skills-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ValuesSection } from "@/components/values-section";
 import { ContactSection } from "@/components/contact-section";
+import { ReviewsSection } from "@/components/reviews-section";
 import { Footer } from "@/components/footer";
 import { useEffect, useState } from "react";
 import { GridBackground } from "@/components/grid-background";
@@ -41,6 +42,7 @@ export default function Home() {
             <SkillsSection />
             <ProjectsSection />
             <ValuesSection />
+            <ReviewsSection />
             <ContactSection />
           </div>
           <Footer />

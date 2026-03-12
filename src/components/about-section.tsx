@@ -24,7 +24,7 @@ export function AboutSection() {
             <h2 className="text-2xl lg:text-3xl font-bold font-headline text-primary">About Me</h2>
             <div className="text-lg text-foreground/80 space-y-4 font-body">
               <p>
-                I'm a 15-year-old developer and AI enthusiast from Faisalabad, Pakistan, on a golden mission to blend creativity with code to build tomorrow's digital experiences. My fascination isn't just with technology itself, but with its power to reshape how we learn, create, and connect.
+                I'm a 16-year-old developer and AI enthusiast from Faisalabad, Pakistan, on a golden mission to blend creativity with code to build tomorrow's digital experiences. My fascination isn't just with technology itself, but with its power to reshape how we learn, create, and connect.
               </p>
               <p>
                 From crafting intelligent systems with Large Language Models to designing futuristic UIs, I'm driven by a desire to explore uncharted territories. Whether it's a deep dive into Bio-AI or rapidly prototyping an idea at a hackathon, I'm constantly seeking new challenges that push the boundaries of what's possible. My goal is simple: to build tools that are not only powerful but also intuitive and empowering for everyone, especially students.

@@ -17,6 +17,7 @@ export function Header() {
     { name: "Bento", href: "#bento", id: "bento" },
     { name: "Skills", href: "#skills", id: "skills" },
     { name: "Projects", href: "#projects", id: "projects" },
+    { name: "Reviews", href: "#reviews", id: "reviews" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
@@ -72,7 +73,7 @@ export function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, type: "spring", stiffness: 200, damping: 20 }}
         className={cn(
-          "pointer-events-auto flex items-center gap-4 md:gap-8 px-6 h-14",
+          "pointer-events-auto flex items-center gap-2 md:gap-4 px-4 h-14",
           "bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-full",
           "shadow-[0_8px_32px_rgba(0,0,0,0.5)] font-body relative group",
           "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/10 before:to-transparent before:pointer-events-none before:-z-10",
@@ -97,7 +98,7 @@ export function Header() {
           <div className="absolute -inset-2 bg-primary/20 blur-lg rounded-full opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300" />
         </Link>
         
-        <nav className="hidden md:flex items-center space-x-1 relative">
+        <nav className="hidden md:flex items-center space-x-0 relative">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             const isHovered = hoveredItem === item.id;
@@ -110,7 +111,7 @@ export function Header() {
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
                 className={cn(
-                  "relative z-10 text-[10px] font-bold uppercase tracking-widest transition-colors duration-300 px-4 py-2 rounded-full",
+                  "relative z-10 text-[9px] font-bold uppercase tracking-widest transition-colors duration-300 px-3 py-2 rounded-full",
                   isActive || isHovered ? "text-white" : "text-white/40 hover:text-white/70"
                 )}
               >

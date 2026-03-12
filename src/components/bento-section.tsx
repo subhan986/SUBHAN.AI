@@ -87,7 +87,7 @@ export function BentoSection() {
           >
             <ShinyCard className="h-full">
               <div className="h-full p-6 bg-primary/10 border border-primary/30 rounded-2xl flex flex-col items-center justify-center text-center">
-                <div className="text-3xl font-headline text-primary mb-1">15</div>
+                <div className="text-3xl font-headline text-primary mb-1">16</div>
                 <h4 className="font-headline text-[10px] opacity-70 uppercase tracking-tighter">Years Young</h4>
               </div>
             </ShinyCard>
