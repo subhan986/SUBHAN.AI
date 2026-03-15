@@ -32,13 +32,19 @@ export function ContactSection() {
     });
 
     async function onSubmit(values: SendMessageInput) {
+        const phoneNumber = "923007611340";
+        const messageText = `Hello Subhan!\n\nName: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`;
+        const encodedText = encodeURIComponent(messageText);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+        window.open(whatsappUrl, "_blank");
+
         toast({
-            title: "Demo Form",
-            description: "This is a placeholder form and does not send messages.",
+            title: "Redirecting to WhatsApp",
+            description: "Opening your WhatsApp to send the message.",
         });
-        // The form is for display only, no message is sent.
-        // We can reset the form if desired after submission.
-        // form.reset();
+        
+        form.reset();
     }
 
   return (
