@@ -44,7 +44,7 @@ export function HeroSection() {
           </motion.div>
            <motion.div whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}>
             <Button asChild size="lg" variant="outline" className="rounded-full bg-black/20 backdrop-blur-sm border-white/20 hover:bg-black/40 hover:border-white/50 transition-all duration-300">
-              <a href="#contact">Get In Touch</a>
+              <a href="#contact">Hire Me</a>
             </Button>
           </motion.div>
         </motion.div>
